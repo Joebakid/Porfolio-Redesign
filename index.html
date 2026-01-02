@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Favicon (does NOT control WhatsApp preview) -->
+    <link rel="icon" href="%PUBLIC_URL%/img/logo.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web developer and entrepreneur creating crypto projects, staking platforms, and NFT tools. Founder of Dogi, Moo Deng, DogWifMog, and Chronolite. Expert in React, Solana trading bots, and e-commerce. Passionate about blockchain, meme coins, and DeFi."
+    />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://josephbawo.tech/" />
+
+    <title>Joseph Bawo</title>
+
+    <!-- Open Graph (used by WhatsApp/Facebook/LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joseph Bawo" />
+    <meta property="og:title" content="Joseph Bawo" />
+    <meta
+      property="og:description"
+      content="Web developer and entrepreneur creating crypto projects, staking platforms, and NFT tools."
+    />
+    <meta property="og:url" content="https://josephbawo.tech/" />
+    <!-- Point to your public/logo image with an ABSOLUTE URL -->
+    <meta property="og:image" content="https://josephbawo.tech/img/logo.png" />
+    <meta property="og:image:secure_url" content="https://josephbawo.tech/img/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <!-- If your logo is at least 200x200, these can be left or adjusted -->
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Joseph Bawo logo" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (nice to have; does not affect WhatsApp) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Joseph Bawo" />
+    <meta
+      name="twitter:description"
+      content="Web developer and entrepreneur creating crypto projects, staking platforms, and NFT tools."
+    />
+    <meta name="twitter:image" content="https://josephbawo.tech/img/logo.png" />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!-- Vercel Web Analytics (only load on production, not localhost) -->
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal =
+          host === "localhost" ||
+          host === "127.0.0.1" ||
+          host === "[::1]";
+
+        if (isLocal) return;
+
+        window.va =
+          window.va ||
+          function () {
+            (window.vaq = window.vaq || []).push(arguments);
+          };
+
+        var s = document.createElement("script");
+        s.defer = true;
+        s.src = "/_vercel/insights/script.js";
+        document.head.appendChild(s);
+      })();
+    </script>
+  </body>
+</html>

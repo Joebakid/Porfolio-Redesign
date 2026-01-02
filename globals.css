@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .container-main{
+    @apply mx-auto w-[90%] md:w-[30%] overflow-x-hidden pt-20 py-5;
+  }
+
+}
+
+
+:root[data-theme="light"] {
+  --bg: #f5f6f7;
+  --nav-bg: rgba(255, 255, 255, 0.75);
+  --text: #4b5563; /* gray-600 */
+  --link-accent: #010813; /* gray-700 */
+   --core-tech:#2d2e30;
+}
+
+:root[data-theme="gray"] {
+  --bg: #0f1115;
+  --nav-bg: rgba(25, 25, 30, 0.85);
+  --text: #babbbe; /* gray-100 */
+  --link-accent: #f3f5f7; /* gray-400 */
+  --core-tech:#babebd;
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
