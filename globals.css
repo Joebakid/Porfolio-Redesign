@@ -2,7 +2,7 @@
 
 @layer utilities {
   .container-main{
-    @apply mx-auto w-[90%] md:w-[50%] lg:w-[30] overflow-x-hidden pt-20 py-5;
+    @apply mx-auto w-[90%] md:w-[50%] lg:w-[30%] overflow-x-hidden pt-20 py-5;
   }
 
 }
