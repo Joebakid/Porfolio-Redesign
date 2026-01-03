@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import profileImg from "./img/img.jpeg";
+import profileImg from "./img/img.jpg";
 
 export default function Intro() {
   const sectionRef = useRef(null);
+  const imgRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,6 +35,27 @@ export default function Intro() {
           },
           "-=0.5"
         );
+
+      /* -------- Hover animation -------- */
+      const img = imgRef.current;
+
+      gsap.set(img, { transformOrigin: "center center" });
+
+      img.addEventListener("mouseenter", () => {
+        gsap.to(img, {
+          scale: 1.15,
+          duration: 0.35,
+          ease: "power3.out",
+        });
+      });
+
+      img.addEventListener("mouseleave", () => {
+        gsap.to(img, {
+          scale: 1,
+          duration: 0.35,
+          ease: "power3.out",
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -46,27 +68,29 @@ export default function Intro() {
     >
       <div className="flex gap-1.5 items-center">
         <div className="flex-1">
-          <h1
-            data-intro-title
-            className="text-2xl font-extrabold md:text-3xl"
-          >
+          <h1 data-intro-title className="text-2xl font-extrabold md:text-3xl">
             Hi, I’m Joseph Bawo
           </h1>
 
-          <p
-            data-intro-text
-            className="text-[15px] md:text-[18px] mt-1"
-          >
+          <p data-intro-text className="text-[15px] md:text-[18px] mt-1">
             Building modern web applications, tools, and digital products that
             scale.
           </p>
         </div>
 
         <img
+          ref={imgRef}
           data-intro-img
           src={profileImg}
           alt="Joseph Bawo"
-          className="w-[100px] h-[100px] flex-shrink-0 rounded-full object-cover"
+          className="
+            w-[100px] h-[100px]
+            flex-shrink-0
+            rounded-full
+            object-cover
+            cursor-pointer
+            will-change-transform
+          "
         />
       </div>
 
