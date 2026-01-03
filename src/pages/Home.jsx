@@ -87,10 +87,7 @@ export default function Home() {
         <Projects />
       </section>
 
-      {/* Footer must NOT be inside data-reveal */}
-      <section data-footer>
-        <Footer />
-      </section>
+     
     </main>
   );
 }

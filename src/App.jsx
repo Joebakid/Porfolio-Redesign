@@ -1,30 +1,30 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/landing page/navigation";
+import Footer from "./components/landing page/footer";
+
 import Resume from "./components/landing page/Resume";
 import Home from "./pages/Home";
+import BlogList from "./components/blog/BlogList";
+import Likes from "./components/landing page/likes";
 
 import { ThemeProvider } from "./components/theme/theme-context";
 import { AppProvider } from "./state/AppContext";
-
-import BlogList from "./components/blog/BlogList";
-
 import GsapProvider from "./gsap/GsapProvider";
 import ScrollToTop from "./components/ScrollToTop";
-import Likes from './components/landing page/likes'
 
 function App() {
   return (
     <GsapProvider>
       <AppProvider>
         <ThemeProvider>
-          {/* Handles scroll reset + GSAP fade-in */}
+          {/* Scroll reset + fade-in */}
           <ScrollToTop />
 
-          {/* Persistent navigation */}
+          {/* Global navigation */}
           <Navigation />
 
-          {/* Page wrapper for GSAP */}
+          {/* Page content */}
           <Routes>
             <Route
               path="/"
@@ -34,6 +34,7 @@ function App() {
                 </div>
               }
             />
+
             <Route
               path="/resume"
               element={
@@ -42,6 +43,7 @@ function App() {
                 </div>
               }
             />
+
             <Route
               path="/bloglist"
               element={
@@ -50,16 +52,19 @@ function App() {
                 </div>
               }
             />
-                    <Route
-          path="/likes"
-          element={
-            <div id="page">
-              <Likes />
-            </div>
-          }
-        />
 
+            <Route
+              path="/likes"
+              element={
+                <div id="page">
+                  <Likes />
+                </div>
+              }
+            />
           </Routes>
+
+          {/* Global footer */}
+          <Footer />
         </ThemeProvider>
       </AppProvider>
     </GsapProvider>

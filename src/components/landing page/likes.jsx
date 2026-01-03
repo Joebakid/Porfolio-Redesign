@@ -150,8 +150,7 @@ export default function Likes() {
         </div>
       </section>
 
-      {/* Footer (full-width, safe) */}
-      <Footer />
+     
     </>
   );
 }
