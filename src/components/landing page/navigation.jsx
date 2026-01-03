@@ -1,13 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../theme/theme-context";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { gsap } from "gsap";
 
 export default function Navigation() {
   const { theme, setTheme } = useTheme();
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
+  const navRef = useRef(null);
 
+  /* -------- Intro animation -------- */
+  useLayoutEffect(() => {
+    if (!navRef.current) return;
+
+    gsap.fromTo(
+      navRef.current,
+      { opacity: 0, scale: 0.98 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      }
+    );
+  }, []);
+
+  /* -------- Scroll hide / show -------- */
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
@@ -27,13 +46,19 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-300
-      ${hidden ? "-translate-y-24 opacity-0" : "translate-y-0 opacity-100"}`}
+      ref={navRef}
+      className={`
+        fixed top-4 inset-x-0 z-50
+        flex justify-center
+        transition-all duration-300
+        ${hidden ? "opacity-0" : "opacity-100"}
+      `}
     >
       <div
         className="
           flex items-center gap-4
-          px-5 py-2
+          px-4 py-2
+          max-w-max
           rounded-full
           backdrop-blur-xl
           shadow-lg
@@ -41,41 +66,25 @@ export default function Navigation() {
         "
         style={{ background: "var(--nav-bg)" }}
       >
-        {/* Internal routes */}
         <NavItem to="/" text="Home" />
-        <NavItem to="/bloglist" text="Blog" />
         <NavItem to="/resume" text="Resume" />
+        <NavItem to="/bloglist" text="Blog" />
 
-        {/* External icons */}
         <IconLink href="https://github.com/Joebakid" label="GitHub">
           <FaGithub />
         </IconLink>
 
-        <IconLink
-          href="https://www.linkedin.com/in/josephbawo/"
-          label="LinkedIn"
-        >
+        <IconLink href="https://www.linkedin.com/in/josephbawo/" label="LinkedIn">
           <FaLinkedin />
         </IconLink>
 
-        <IconLink
-          href="https://x.com/dogexdrc20"
-          label="Twitter / X"
-        >
+        <IconLink href="https://x.com/dogexdrc20" label="Twitter / X">
           <FaXTwitter />
         </IconLink>
 
-        {/* Theme toggle */}
         <button
           onClick={() => setTheme(theme === "light" ? "gray" : "light")}
-          className="
-            ml-1
-            text-[11px] md:text-xs
-            px-2 py-1
-            rounded-full
-            border border-white/20
-            hover:opacity-70
-          "
+          className="ml-1 text-[11px] md:text-xs px-2 py-1 rounded-full border border-white/20 hover:opacity-70 transition-opacity"
         >
           {theme === "light" ? "Gray" : "Light"}
         </button>
@@ -94,9 +103,9 @@ function NavItem({ to, text }) {
         `
         text-[11px] md:text-sm
         font-medium
-        transition-opacity
-        hover:opacity-70
-        ${isActive ? "opacity-100" : "opacity-80"}
+        transition-all duration-200
+        hover:font-bold
+        ${isActive ? "font-bold opacity-100" : "opacity-80"}
         `
       }
     >
@@ -112,12 +121,7 @@ function IconLink({ href, label, children }) {
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="
-        text-sm md:text-base
-        hover:opacity-70
-        transition-opacity
-        flex items-center
-      "
+      className="text-sm md:text-base hover:opacity-70 transition-opacity flex items-center"
     >
       {children}
     </a>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from '../landing page/footer'
 
 const posts = [
   {
@@ -86,6 +87,8 @@ export default function BlogList() {
           </a>
         </footer>
       </blockquote>
+
+      <Footer/>
     </section>
   );
 }

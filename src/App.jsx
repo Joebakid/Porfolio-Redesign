@@ -7,21 +7,52 @@ import Home from "./pages/Home";
 import { ThemeProvider } from "./components/theme/theme-context";
 import { AppProvider } from "./state/AppContext";
 
-import BlogList from '../src/components/blog/BlogList'
+import BlogList from "./components/blog/BlogList";
+
+import GsapProvider from "./gsap/GsapProvider";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <AppProvider>
-      <ThemeProvider>
-        <Navigation />
+    <GsapProvider>
+      <AppProvider>
+        <ThemeProvider>
+          {/* Handles scroll reset + GSAP fade-in */}
+          <ScrollToTop />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/bloglist" element={<BlogList/>} />
-        </Routes>
-      </ThemeProvider>
-    </AppProvider>
+          {/* Persistent navigation */}
+          <Navigation />
+
+          {/* Page wrapper for GSAP */}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div id="page">
+                  <Home />
+                </div>
+              }
+            />
+            <Route
+              path="/resume"
+              element={
+                <div id="page">
+                  <Resume />
+                </div>
+              }
+            />
+            <Route
+              path="/bloglist"
+              element={
+                <div id="page">
+                  <BlogList />
+                </div>
+              }
+            />
+          </Routes>
+        </ThemeProvider>
+      </AppProvider>
+    </GsapProvider>
   );
 }
 
