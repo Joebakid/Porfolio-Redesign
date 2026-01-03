@@ -37,7 +37,7 @@ export default function Resume() {
             Federal University of Petroleum Resources, Effurun
           </p>
           <p>Bachelor of Engineering (B.Eng), Marine Engineering</p>
-          <p className="opacity-70">January 2019 – July 2025</p>
+          <p className="opacity-70">January 2019 – October 2026</p>
         </div>
       </section>
 
@@ -94,7 +94,7 @@ export default function Resume() {
               Software Engineer (Freelance)
             </p>
             <p className="opacity-70">
-              December 2023 – Present | Remote, Nigeria
+              December 2023  | Remote, Nigeria
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -128,7 +128,7 @@ export default function Resume() {
               Core Team Member, Chucksale
             </p>
             <p className="opacity-70">
-              January 2024 – Present | Remote, Nigeria
+              January 2024  | Remote, Nigeria
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -155,7 +155,7 @@ export default function Resume() {
               Software Developer, FrontCartel
             </p>
             <p className="opacity-70">
-              December 2023 – Present | Remote, Nigeria
+              December 2023  | Remote, Nigeria
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
