@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 
 export default function Navigation() {
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme(); // ✅ no setTheme
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
   const navRef = useRef(null);
@@ -51,7 +51,7 @@ export default function Navigation() {
         fixed top-4 inset-x-0 z-50
         flex justify-center
         transition-all duration-300
-        ${hidden ? "opacity-0" : "opacity-100"}
+        ${hidden ? "opacity-0 pointer-events-none" : "opacity-100"}
       `}
     >
       <div
@@ -82,11 +82,20 @@ export default function Navigation() {
           <FaXTwitter />
         </IconLink>
 
+        {/* ✅ Correct theme toggle */}
         <button
-          onClick={() => setTheme(theme === "light" ? "gray" : "light")}
-          className="ml-1 text-[11px] md:text-xs px-2 py-1 rounded-full border border-white/20 hover:opacity-70 transition-opacity"
+          onClick={toggleTheme}
+          className="
+            ml-1
+            text-[11px] md:text-xs
+            px-2 py-1
+            rounded-full
+            border border-white/20
+            hover:opacity-70
+            transition-opacity
+          "
         >
-          {theme === "light" ? "Gray" : "Light"}
+           {theme === "light" ? "Gray" : "Light"}
         </button>
       </div>
     </nav>

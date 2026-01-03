@@ -1,43 +1,42 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") ?? "light";
+      return localStorage.getItem("theme") ?? "gray";
     }
     return "light";
   });
 
-  useEffect(() => {
+  // 🔑 Apply theme BEFORE paint (prevents flicker / desync)
+  useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  // 🔥 Single source of truth
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-  const value = {
-    theme,
-    setTheme,     // still available if needed
-    toggleTheme,  // ✅ recommended
+    setTheme((prev) => (prev === "light" ? "gray" : "light"));
   };
 
   return (
-    <ThemeContext.Provider value={value}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
 export function useTheme() {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider");
+  const ctx = useContext(ThemeContext);
+  if (!ctx) {
+    throw new Error("useTheme must be used within ThemeProvider");
   }
-
-  return context;
+  return ctx;
 }
