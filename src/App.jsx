@@ -11,6 +11,7 @@ import BlogList from "./components/blog/BlogList";
 
 import GsapProvider from "./gsap/GsapProvider";
 import ScrollToTop from "./components/ScrollToTop";
+import Likes from './components/landing page/likes'
 
 function App() {
   return (
@@ -49,6 +50,15 @@ function App() {
                 </div>
               }
             />
+                    <Route
+          path="/likes"
+          element={
+            <div id="page">
+              <Likes />
+            </div>
+          }
+        />
+
           </Routes>
         </ThemeProvider>
       </AppProvider>
