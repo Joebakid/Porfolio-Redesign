@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "./footer";
 
 const pdfs = [
   {
@@ -69,81 +70,88 @@ export default function Likes() {
   ];
 
   return (
-    <section className="container-main mt-20 flex justify-center">
-      <div className="w-full max-w-6xl flex flex-col gap-24">
-        {sections.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="flex flex-col items-center">
-            <p className="py-2 opacity-60 text-sm text-center">
-              [ click to open {section.title.toLowerCase()} ]
-            </p>
+    <>
+      {/* Likes content */}
+      <section className="container-main mt-20 flex justify-center">
+        <div className="w-full max-w-6xl flex flex-col gap-24">
+          {sections.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="flex flex-col items-center">
+              <p className="py-2 opacity-60 text-sm text-center">
+                [ click to open {section.title.toLowerCase()} ]
+              </p>
 
-            <h2 className="section-title text-center mb-10">
-              {section.title}
-            </h2>
+              <h2 className="section-title text-center mb-10">
+                {section.title}
+              </h2>
 
-            {/* FLEX WRAP CONTAINER */}
-            <div className="flex flex-wrap justify-center gap-8">
-              {section.items.map((item, index) => {
-                const key = `${sectionIndex}-${index}`;
-                const isBook = !item.videoId;
+              <div className="flex flex-wrap justify-center gap-8">
+                {section.items.map((item, index) => {
+                  const key = `${sectionIndex}-${index}`;
+                  const isBook = !item.videoId;
 
-                return (
-                  <div
-                    key={key}
-                    className="
-                      p-4
-                      rounded-xl
-                      flex flex-col items-center
-                      text-center
-                      hover:bg-white/5
-                      transition
-                      w-[400px]
-                    "
-                  >
-                    {isBook ? (
-                      <a href={item.href} target="_blank" rel="noreferrer">
-                        <img
-                          src={item.cover}
-                          alt={item.title}
-                          className="rounded-lg w-full"
-                        />
-                      </a>
-                    ) : (
-                      <div
-                        className="cursor-pointer"
-                        onClick={() => setActiveKey(key)}
-                      >
-                        {activeKey !== key ? (
+                  return (
+                    <div
+                      key={key}
+                      className="
+                        p-4
+                        rounded-xl
+                        flex flex-col items-center
+                        text-center
+                        hover:bg-white/5
+                        transition
+                        w-full
+                        max-w-[400px]
+                        break-words
+                      "
+                    >
+                      {isBook ? (
+                        <a href={item.href} target="_blank" rel="noreferrer">
                           <img
-                            src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
+                            src={item.cover}
                             alt={item.title}
                             className="rounded-lg w-full"
                           />
-                        ) : (
-                          <iframe
-                            src={`https://www.youtube.com/embed/${item.videoId}?autoplay=1`}
-                            title={item.title}
-                            frameBorder="0"
-                            allow="autoplay; encrypted-media"
-                            allowFullScreen
-                            className="w-full aspect-video rounded-lg"
-                          />
-                        )}
-                      </div>
-                    )}
+                        </a>
+                      ) : (
+                        <div
+                          className="cursor-pointer w-full"
+                          onClick={() => setActiveKey(key)}
+                        >
+                          {activeKey !== key ? (
+                            <img
+                              src={`https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`}
+                              alt={item.title}
+                              className="rounded-lg w-full"
+                            />
+                          ) : (
+                            <iframe
+                              src={`https://www.youtube.com/embed/${item.videoId}?autoplay=1`}
+                              title={item.title}
+                              frameBorder="0"
+                              allow="autoplay; encrypted-media"
+                              allowFullScreen
+                              className="w-full aspect-video rounded-lg"
+                            />
+                          )}
+                        </div>
+                      )}
 
-                    <h3 className="title-text-like mt-4">
-                      {item.title}
-                      {item.artist ? ` – ${item.artist}` : ""}
-                      {item.year ? ` (${item.year})` : ""}
-                    </h3>
-                  </div>
-                );
-              })}
+                      <h3 className="title-text-like mt-4">
+                        {item.title}
+                        {item.artist ? ` – ${item.artist}` : ""}
+                        {item.year ? ` (${item.year})` : ""}
+                      </h3>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer (full-width, safe) */}
+      <Footer />
+    </>
   );
 }
