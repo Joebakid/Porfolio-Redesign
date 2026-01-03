@@ -4,23 +4,29 @@ const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Read once on initial render
     if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "light";
+      return localStorage.getItem("theme") ?? "light";
     }
     return "light";
   });
 
   useEffect(() => {
-    // Apply theme to <html>
     document.documentElement.dataset.theme = theme;
-
-    // Persist theme
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  const value = {
+    theme,
+    setTheme,     // still available if needed
+    toggleTheme,  // ✅ recommended
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );

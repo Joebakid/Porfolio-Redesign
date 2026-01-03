@@ -13,6 +13,8 @@ import { AppProvider } from "./state/AppContext";
 import GsapProvider from "./gsap/GsapProvider";
 import ScrollToTop from "./components/ScrollToTop";
 
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   return (
     <GsapProvider>
@@ -63,8 +65,9 @@ function App() {
             />
           </Routes>
 
-          {/* Global footer */}
+        
           <Footer />
+           <Analytics />
         </ThemeProvider>
       </AppProvider>
     </GsapProvider>

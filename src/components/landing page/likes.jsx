@@ -72,7 +72,7 @@ export default function Likes() {
   return (
     <>
       {/* Likes content */}
-      <section className="container-main mt-20 flex justify-center">
+      <section className="  mt-20 flex justify-center">
         <div className="w-full max-w-6xl flex flex-col gap-24">
           {sections.map((section, sectionIndex) => (
             <div key={sectionIndex} className="flex flex-col items-center">
