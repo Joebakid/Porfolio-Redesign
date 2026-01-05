@@ -15,7 +15,6 @@ export default function Resume() {
             josephbawo@gmail.com
           </a>{" "}
           |{" "}
-         
           <a
             href="https://github.com/Joebakid"
             target="_blank"
@@ -60,6 +59,8 @@ export default function Resume() {
         </div>
       </section>
 
+    
+
       {/* Experience */}
       <section>
         <h2 className="text-[16px] font-extrabold uppercase md:text-xl">
@@ -88,13 +89,61 @@ export default function Resume() {
             </ul>
           </div>
 
+
+          <div>
+              {/* Projects */}
+    
+        {/* <h2 className="text-[16px] font-extrabold uppercase md:text-xl mt-10">
+          Selected Projects
+        </h2> */}
+
+        <div className="mt-4 space-y-4 text-[14px] md:text-[15px]">
+          <div>
+            <p className="font-semibold">
+              Ron’s Crypto Therapy
+            </p>
+             <p className="opacity-70">
+              December 2024| Remote, United state
+            </p>
+
+            <p className="opacity-80">
+              A crypto payment platform integrated with mentorship services,
+              supporting fiat-to-crypto transactions and real-time wallet updates.
+            </p>
+
+            <p className="opacity-70 mt-1">
+              Stack: React, TypeScript
+            </p>
+
+            {/* <p className="mt-1">
+              <a
+                href="https://ronscryptotherapy.com/"
+                target="_blank"
+                className="underline text-[color:var(--link-accent)] mr-3"
+              >
+                Live Site
+              </a>
+
+              <a
+                href="https://github.com/Joebakid/Ron-s-Crypto-Therapy---Master-Crypto-Trading"
+                target="_blank"
+                className="underline text-[color:var(--link-accent)]"
+              >
+                GitHub
+              </a>
+            </p> */}
+          </div>
+        </div>
+      
+          </div>
+
           {/* Freelance */}
           <div>
             <p className="font-semibold">
               Software Engineer (Freelance)
             </p>
             <p className="opacity-70">
-              December 2023  | Remote, Nigeria
+              December 2023 | Remote, International clients
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -128,7 +177,7 @@ export default function Resume() {
               Core Team Member, Chucksale
             </p>
             <p className="opacity-70">
-              January 2024  | Remote, Nigeria
+              January 2024 | Remote, International clients
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -155,7 +204,7 @@ export default function Resume() {
               Software Developer, FrontCartel
             </p>
             <p className="opacity-70">
-              December 2023  | Remote, Nigeria
+              December 2023 | Remote, International clients
             </p>
 
             <ul className="list-disc pl-5 mt-2 space-y-1">
