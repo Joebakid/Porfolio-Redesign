@@ -98,41 +98,129 @@ export default function Resume() {
         </h2> */}
 
         <div className="mt-4 space-y-4 text-[14px] md:text-[15px]">
-          <div>
-            <p className="font-semibold">
-              Ron’s Crypto Therapy
-            </p>
-             <p className="opacity-70">
-              December 2024| Remote, United state
-            </p>
+         <div>
+  <p className="font-semibold">
+    Ron’s Crypto Therapy
+  </p>
 
-            <p className="opacity-80">
-              A crypto payment platform integrated with mentorship services,
-              supporting fiat-to-crypto transactions and real-time wallet updates.
-            </p>
+  <p className="opacity-70">
+    December 2024 | Remote, United States
+  </p>
 
-            <p className="opacity-70 mt-1">
-              Stack: React, TypeScript
-            </p>
+  <ul className="list-disc pl-5 mt-2 space-y-1">
+    <li>
+      Built a crypto payment platform integrated with mentorship services.
+    </li>
+    <li>
+      Implemented fiat-to-crypto transaction flows with secure payment handling.
+    </li>
+    
+    <li>
+      Designed responsive and scalable frontend architecture for smooth user experience.
+    </li>
+    <li>
+      Collaborated with stakeholders to align product features with user needs.
+    </li>
+    <li className="opacity-70">
+      Technologies: React, TypeScript
+    </li>
+  </ul>
 
-            {/* <p className="mt-1">
-              <a
-                href="https://ronscryptotherapy.com/"
-                target="_blank"
-                className="underline text-[color:var(--link-accent)] mr-3"
-              >
-                Live Site
-              </a>
+  {/* 
+  <p className="mt-1">
+    <a
+      href="https://ronscryptotherapy.com/"
+      target="_blank"
+      className="underline text-[color:var(--link-accent)] mr-3"
+    >
+      Live Site
+    </a>
 
-              <a
-                href="https://github.com/Joebakid/Ron-s-Crypto-Therapy---Master-Crypto-Trading"
-                target="_blank"
-                className="underline text-[color:var(--link-accent)]"
-              >
-                GitHub
-              </a>
-            </p> */}
-          </div>
+    <a
+      href="https://github.com/Joebakid/Ron-s-Crypto-Therapy---Master-Crypto-Trading"
+      target="_blank"
+      className="underline text-[color:var(--link-accent)]"
+    >
+      GitHub
+    </a>
+  </p> 
+  */}
+</div>
+
+<div>
+  <p className="font-semibold">
+    Create-Bawo-Frontend (Open Source CLI)
+  </p>
+
+  <p className="opacity-70">
+    2024 | Global, Open Source
+  </p>
+
+  <ul className="list-disc pl-5 mt-2 space-y-1">
+    <li>
+      Built and maintained a zero-configuration CLI tool for rapidly scaffolding
+      production-ready React and Vite applications.
+    </li>
+    <li>
+      Automated project setup including Tailwind CSS, Zustand/Redux state
+      management, GSAP and Framer Motion animations, and routing configuration.
+    </li>
+    <li>
+      Implemented interactive CLI prompts and template generation for consistent
+      project structure and developer productivity.
+    </li>
+    <li>
+      Reduced setup time for new projects from hours to minutes, improving
+      onboarding efficiency for developers.
+    </li>
+    <li>
+      Published and versioned the package on npm with documentation and usage
+      examples for community adoption.
+    </li>
+    <li className="opacity-70">
+      Technologies: Node.js, JavaScript, Inquirer, Vite, React, Tailwind CSS
+    </li>
+  </ul>
+</div>
+
+<div>
+  <p className="font-semibold">
+    TechJojo (Gadget E-Commerce Platform)
+  </p>
+
+  <p className="opacity-70">
+    2023 | Remote, Nigeria
+  </p>
+
+  <ul className="list-disc pl-5 mt-2 space-y-1">
+    <li>
+      Built a lightweight e-commerce platform for showcasing and selling consumer
+      gadgets with dynamic product listings and WhatsApp order flow.
+    </li>
+    <li>
+      Designed a creative data storage system using Google Sheets as a backend
+      database for product inventory, pricing, and availability management.
+    </li>
+    <li>
+      Integrated Google Sheets API to fetch and sync product data in real time
+      without the overhead of a traditional database setup.
+    </li>
+    <li>
+      Enabled non-technical operators to update products directly from a shared
+      spreadsheet, improving operational speed and flexibility.
+    </li>
+    <li>
+      Implemented responsive UI components, search filtering, and product
+      categorization for improved customer experience.
+    </li>
+    <li className="opacity-70">
+      Technologies: React, JavaScript, Google Sheets API, Tailwind CSS
+    </li>
+  </ul>
+</div>
+
+
+
         </div>
       
           </div>

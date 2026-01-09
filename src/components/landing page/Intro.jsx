@@ -37,25 +37,25 @@ export default function Intro() {
         );
 
       /* -------- Hover animation -------- */
-      const img = imgRef.current;
+    //   const img = imgRef.current;
 
-      gsap.set(img, { transformOrigin: "center center" });
+    //   gsap.set(img, { transformOrigin: "center center" });
 
-      img.addEventListener("mouseenter", () => {
-        gsap.to(img, {
-          scale: 1.15,
-          duration: 0.35,
-          ease: "power3.out",
-        });
-      });
+    //   img.addEventListener("mouseenter", () => {
+    //     gsap.to(img, {
+    //       scale: 1.15,
+    //       duration: 0.35,
+    //       ease: "power3.out",
+    //     });
+    //   });
 
-      img.addEventListener("mouseleave", () => {
-        gsap.to(img, {
-          scale: 1,
-          duration: 0.35,
-          ease: "power3.out",
-        });
-      });
+    //   img.addEventListener("mouseleave", () => {
+    //     gsap.to(img, {
+    //       scale: 1,
+    //       duration: 0.35,
+    //       ease: "power3.out",
+    //     });
+    //   });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -66,20 +66,20 @@ export default function Intro() {
       ref={sectionRef}
       className="container-main flex items-center justify-center flex-col mt-10"
     >
-      <div className="flex gap-1.5 items-center">
+      <div className="flex gap-5 items-center">
         <div className="flex-1">
           <h1 data-intro-title className="text-2xl font-extrabold md:text-3xl">
             Hi, I’m Joseph Bawo
           </h1>
 
-          <p data-intro-text className="text-[15px] md:text-[18px] mt-1">
+          <p data-intro-text className="text-[14px] md:text-[16px] mt-1">
             Building modern web applications, tools, and digital products that
             scale.
           </p>
         </div>
 
         <img
-          ref={imgRef}
+          // ref={imgRef}
           data-intro-img
           src={profileImg}
           alt="Joseph Bawo"
