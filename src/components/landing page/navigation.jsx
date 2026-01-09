@@ -47,7 +47,7 @@ export default function Navigation() {
   return (
     <nav
       ref={navRef}
-      className={`
+      className={`print:hidden
         fixed top-4 inset-x-0 z-50
         flex justify-center
         transition-all duration-300
@@ -62,7 +62,7 @@ export default function Navigation() {
           rounded-full
           backdrop-blur-xl
           shadow-lg
-          border border-white/10
+          border border-white/10 
         "
         style={{ background: "var(--nav-bg)" }}
       >

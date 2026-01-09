@@ -12,6 +12,7 @@ import { ThemeProvider } from "./components/theme/theme-context";
 import { AppProvider } from "./state/AppContext";
 import GsapProvider from "./gsap/GsapProvider";
 import ScrollToTop from "./components/ScrollToTop";
+import ResumePDF from "./components/resume/ResumePDF";
 
 import { Analytics } from "@vercel/analytics/react"
 
@@ -45,6 +46,8 @@ function App() {
                 </div>
               }
             />
+
+            <Route path="/resume/pdf" element={<ResumePDF/>} />
 
             <Route
               path="/bloglist"

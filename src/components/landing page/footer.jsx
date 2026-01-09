@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
     <section className="container-main mt-20">
-      <footer className="mt-20 pb-10">
+      <footer className="mt-20 pb-10 print:hidden">
         <div
           className="
             flex flex-col gap-4
