@@ -1,184 +1,111 @@
 import { useEffect } from "react";
+import resumeData from "../../data/resumeData";
 
 export default function ResumePDF() {
+  const { personal, education, skills, experience } = resumeData;
+
   useEffect(() => {
     const timer = setTimeout(() => window.print(), 400);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-  
     <div className="min-h-screen bg-white text-black flex justify-center">
-      <div className="w-[794px] px-8 py-10 space-y-16">
+      <div className="w-[794px] px-8 py-10 space-y-10">
 
-        {/* ================= PAGE 1 ================= */}
-        {/* Experience – Page 1 */}
-<section>
-  <h2 className="text-[16px] font-extrabold uppercase">
-    Professional Experience
-  </h2>
+        {/* ================= HEADER ================= */}
+        <header className="space-y-1">
+          <h1 className="text-2xl font-extrabold">
+            {personal.name}
+          </h1>
 
-  <div className="mt-4 space-y-6 text-[14px]">
+          <p className="text-[14px] opacity-80">
+            {personal.email} | GitHub
+          </p>
+        </header>
 
-    {/* Base Wallet Checker */}
-    <div>
-      <p className="font-semibold">
-        Founder & Lead Engineer — Base Wallet Checker (Web3 Analytics Platform)
-      </p>
-      <p className="opacity-70">2024 – Present | Remote</p>
-      <ul className="list-disc pl-5 mt-2 space-y-1">
-        <li>
-          Built a production-grade wallet analytics platform for the Base blockchain,
-          enabling balance tracking, transaction analysis, token holdings, and protocol usage insights.
-        </li>
-        <li>
-          Integrated wagmi, viem, and Coinbase OnchainKit for wallet connections,
-          signer detection, and secure Web3 interactions.
-        </li>
-        <li>
-          Implemented automatic detection of smart contracts, routers, NFTs, and DeFi protocols.
-        </li>
-        <li>
-          Designed responsive dashboards optimized for mobile performance and clarity.
-        </li>
-        <li className="opacity-70">
-          Stack: Next.js, TypeScript, wagmi, viem, Tailwind CSS, OnchainKit
-        </li>
-      </ul>
-    </div>
+        {/* ================= EDUCATION ================= */}
+        <section>
+          <h2 className="text-[16px] font-extrabold uppercase">
+            Education
+          </h2>
 
-    {/* Ron’s Crypto Therapy */}
-    <div>
-      <p className="font-semibold">
-        Frontend Engineer — Ron’s Crypto Therapy (Fintech Platform)
-      </p>
-      <p className="opacity-70">Dec 2024 | Remote, United States</p>
-      <ul className="list-disc pl-5 mt-2 space-y-1">
-        <li>
-          Developed a crypto payment interface integrated with mentorship services and gated content access.
-        </li>
-        <li>
-          Implemented secure fiat-to-crypto transaction workflows and wallet integrations.
-        </li>
-        <li>
-          Built scalable component architecture and responsive layouts.
-        </li>
-        <li className="opacity-70">
-          Stack: React, TypeScript, Web3 APIs
-        </li>
-      </ul>
-    </div>
+          {education.map((edu, index) => (
+            <div key={index} className="mt-2 space-y-1 text-[14px]">
+              <p className="font-semibold">{edu.school}</p>
+              <p>{edu.degree}</p>
+              <p className="opacity-70">{edu.period}</p>
+            </div>
+          ))}
+        </section>
 
-    {/* create-bawo-frontend */}
-    <div>
-      <p className="font-semibold">
-        Creator & Maintainer — create-bawo-frontend (Open Source CLI Tool)
-      </p>
-      <p className="opacity-70">2024 – Present | Global Open Source</p>
-      <ul className="list-disc pl-5 mt-2 space-y-1">
-        <li>
-          Architected a zero-configuration CLI that scaffolds production-ready React,
-          Vite, and Next.js applications in seconds.
-        </li>
-        <li>
-          Automated setup for Tailwind CSS, state management, animations, linting,
-          and project structure.
-        </li>
-        <li>
-          Maintained documentation, release pipelines, and template versioning.
-        </li>
-        <li className="opacity-70">
-          Stack: Node.js, JavaScript, TypeScript, Inquirer
-        </li>
-      </ul>
-    </div>
+        {/* ================= SKILLS ================= */}
+        <section>
+          <h2 className="text-[16px] font-extrabold uppercase">
+            Skills & Technologies
+          </h2>
 
-  </div>
-</section>
+          <div className="mt-2 space-y-2 text-[14px]">
+            <p>
+              <span className="font-semibold">Proficient:</span>{" "}
+              {skills.proficient.join(", ")}
+            </p>
 
+            <p>
+              <span className="font-semibold">Familiar:</span>{" "}
+              {skills.familiar.join(", ")}
+            </p>
+          </div>
+        </section>
 
-       
-       {/* ================= PAGE 2 ================= */}
-<section className="space-y-8">
+        {/* ================= EXPERIENCE ================= */}
+        <section className="space-y-6">
+          <h2 className="text-[16px] font-extrabold uppercase">
+            Professional Experience
+          </h2>
 
-  {/* ChronoliteNG */}
-  <div>
-    <p className="font-semibold">
-      Founder & Product Engineer — ChronoliteNG (E-Commerce Platform)
-    </p>
-    <p className="opacity-70">2023 – Present | Nigeria</p>
-    <ul className="list-disc pl-5 mt-2 space-y-1">
-      <li>
-        Built a full-featured watch e-commerce platform with dynamic catalog management and mobile-first UX.
-      </li>
-      <li>
-        Implemented WhatsApp ordering automation, discount logic, and cart workflows.
-      </li>
-      <li className="opacity-70">
-        Stack: React, Tailwind CSS, JavaScript
-      </li>
-    </ul>
-  </div>
+          {experience.map((job, index) => (
+            <div key={index} className="break-inside-avoid">
+              <p className="font-semibold">
+                {job.role} — {job.company}{" "}
+                {job.description && (
+                  <span className="opacity-70">
+                    ({job.description})
+                  </span>
+                )}
+              </p>
 
-  {/* TechJojo */}
-  <div>
-    <p className="font-semibold">
-      Founder & Engineer — TechJojo (Gadget Commerce Platform)
-    </p>
-    <p className="opacity-70">2023 – 2024 | Nigeria</p>
-    <ul className="list-disc pl-5 mt-2 space-y-1">
-      <li>
-        Built a lightweight commerce platform powered by Google Sheets as a real-time backend.
-      </li>
-      <li>
-        Implemented inventory syncing and WhatsApp checkout automation.
-      </li>
-      <li className="opacity-70">
-        Stack: React, Google Sheets API
-      </li>
-    </ul>
-  </div>
+              <p className="opacity-70">
+                {job.period} | {job.location}
+              </p>
 
-  {/* Engineering Project */}
-  <div>
-    <p className="font-semibold">
-      Lead Design Engineer — MV Blue Ocean Water Hyacinth Harvester (Academic Project)
-    </p>
-    <p className="opacity-70">2024 – Present | Nigeria</p>
-    <ul className="list-disc pl-5 mt-2 space-y-1">
-      <li>
-        Led conveyor system design for biomass intake, transport efficiency, and clog resistance.
-      </li>
-      <li>
-        Performed CAD modelling, mechanical calculations, and system validation.
-      </li>
-      <li className="opacity-70">
-        Stack: SolidWorks, AutoCAD, Mechanical Design
-      </li>
-    </ul>
-  </div>
+              <ul className="list-disc pl-5 mt-2 space-y-1 text-[14px]">
+                {job.bullets.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
 
-  {/* Freelance */}
-  <div>
-    <p className="font-semibold">Software Engineer — Freelance</p>
-    <p className="opacity-70">2023 – Present | Remote</p>
-    <ul className="list-disc pl-5 mt-2 space-y-1">
-      <li>
-        Delivered crypto dashboards, APIs, NFT tools, landing pages, and internal platforms.
-      </li>
-      <li>
-        Supported deployment pipelines, performance optimization, and scaling.
-      </li>
-      <li className="opacity-70">
-        Stack: Node.js, MongoDB, React
-      </li>
-    </ul>
-  </div>
-
-</section>
+                <li className="opacity-70">
+                  Stack: {job.technologies}
+                </li>
+              </ul>
+            </div>
+          ))}
+        </section>
 
       </div>
+
+      {/* ===== PRINT SAFETY ===== */}
+      <style>
+        {`
+          @media print {
+            .break-inside-avoid {
+              break-inside: avoid;
+              page-break-inside: avoid;
+            }
+          }
+        `}
+      </style>
+
     </div>
-    
   );
 }
