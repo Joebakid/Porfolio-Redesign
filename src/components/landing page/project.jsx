@@ -1,6 +1,15 @@
 export default function Projects() {
   const projects = [
     {
+  title: "create-bawo-frontend (CLI Tool)",
+  description:
+    "A zero-configuration command-line tool that scaffolds production-ready React, Vite, and Next.js applications in seconds. Automatically configures Tailwind CSS, Zustand/Redux state management, GSAP and Framer Motion animations, folder structure, linting, and environment setup, significantly reducing developer onboarding and project bootstrap time.",
+  stack: "Node.js, JavaScript, TypeScript, Inquirer, Vite, React, Tailwind CSS",
+  live: "https://create-bawo-frontend.vercel.app/",
+  github: "https://github.com/Joebakid/create-bawo-frontend",
+},
+,
+    {
       title: "Tetris Game",
       description:
         "A classic Tetris game built using modern web technologies with smooth controls, intuitive UI, and responsive design.",
@@ -25,6 +34,15 @@ export default function Projects() {
       live: "https://pdfhouse.vercel.app/",
       github: "https://github.com/Joebakid/PDFHOUSE",
     },
+    {
+  title: "Base Wallet Checker",
+  description:
+    "A comprehensive on-chain wallet analytics platform for the Base blockchain that allows users to analyze wallet balances, transaction history, token holdings, smart contract interactions, and protocol usage. Features automatic detection of routers, NFTs, dApps, and DeFi activity, with seamless wallet connection and Farcaster Mini-App integration for social distribution.",
+  stack: "Next.js, React, TypeScript, wagmi, viem, Coinbase OnchainKit, Tailwind CSS",
+  live: "https://base-walletchecker.vercel.app/",
+  github: "https://github.com/Joebakid/BaseWalletChecker",
+},
+
     {
       title: "ChronoliteNG",
       description:
