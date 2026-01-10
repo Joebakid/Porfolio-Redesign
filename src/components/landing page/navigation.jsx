@@ -11,20 +11,20 @@ export default function Navigation() {
   const navRef = useRef(null);
 
   /* -------- Intro animation -------- */
-  useLayoutEffect(() => {
-    if (!navRef.current) return;
+  // useLayoutEffect(() => {
+  //   if (!navRef.current) return;
 
-    gsap.fromTo(
-      navRef.current,
-      { opacity: 0, scale: 0.98 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     navRef.current,
+  //     { opacity: 0, scale: 0.98 },
+  //     {
+  //       opacity: 1,
+  //       scale: 1,
+  //       duration: 0.4,
+  //       ease: "power2.out",
+  //     }
+  //   );
+  // }, []);
 
   /* -------- Scroll hide / show -------- */
   useEffect(() => {
@@ -93,6 +93,7 @@ export default function Navigation() {
             border border-white/20
             hover:opacity-70
             transition-opacity
+            cursor-pointer
           "
         >
            {theme === "light" ? "Gray" : "Light"}
