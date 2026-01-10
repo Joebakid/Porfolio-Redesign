@@ -8,7 +8,7 @@ export default function Projects() {
   live: "https://create-bawo-frontend.vercel.app/",
   github: "https://github.com/Joebakid/create-bawo-frontend",
 },
-,
+
     {
       title: "Tetris Game",
       description:

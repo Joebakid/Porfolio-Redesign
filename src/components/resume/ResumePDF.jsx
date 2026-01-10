@@ -12,144 +12,171 @@ export default function ResumePDF() {
       <div className="w-[794px] px-8 py-10 space-y-16">
 
         {/* ================= PAGE 1 ================= */}
-        <section className="space-y-10 break-after-page">
+        {/* Experience – Page 1 */}
+<section>
+  <h2 className="text-[16px] font-extrabold uppercase">
+    Professional Experience
+  </h2>
 
-          {/* Header */}
-          <header className="space-y-1">
-            <h1 className="text-2xl font-extrabold">
-              Joseph Bawo
-            </h1>
+  <div className="mt-4 space-y-6 text-[14px]">
 
-            <p className="text-[14px] opacity-80">
-              josephbawo@gmail.com | GitHub
-            </p>
-          </header>
+    {/* Base Wallet Checker */}
+    <div>
+      <p className="font-semibold">
+        Founder & Lead Engineer — Base Wallet Checker (Web3 Analytics Platform)
+      </p>
+      <p className="opacity-70">2024 – Present | Remote</p>
+      <ul className="list-disc pl-5 mt-2 space-y-1">
+        <li>
+          Built a production-grade wallet analytics platform for the Base blockchain,
+          enabling balance tracking, transaction analysis, token holdings, and protocol usage insights.
+        </li>
+        <li>
+          Integrated wagmi, viem, and Coinbase OnchainKit for wallet connections,
+          signer detection, and secure Web3 interactions.
+        </li>
+        <li>
+          Implemented automatic detection of smart contracts, routers, NFTs, and DeFi protocols.
+        </li>
+        <li>
+          Designed responsive dashboards optimized for mobile performance and clarity.
+        </li>
+        <li className="opacity-70">
+          Stack: Next.js, TypeScript, wagmi, viem, Tailwind CSS, OnchainKit
+        </li>
+      </ul>
+    </div>
 
-          {/* Education */}
-          <section>
-            <h2 className="text-[16px] font-extrabold uppercase">
-              Education
-            </h2>
+    {/* Ron’s Crypto Therapy */}
+    <div>
+      <p className="font-semibold">
+        Frontend Engineer — Ron’s Crypto Therapy (Fintech Platform)
+      </p>
+      <p className="opacity-70">Dec 2024 | Remote, United States</p>
+      <ul className="list-disc pl-5 mt-2 space-y-1">
+        <li>
+          Developed a crypto payment interface integrated with mentorship services and gated content access.
+        </li>
+        <li>
+          Implemented secure fiat-to-crypto transaction workflows and wallet integrations.
+        </li>
+        <li>
+          Built scalable component architecture and responsive layouts.
+        </li>
+        <li className="opacity-70">
+          Stack: React, TypeScript, Web3 APIs
+        </li>
+      </ul>
+    </div>
 
-            <div className="mt-2 space-y-1 text-[14px]">
-              <p className="font-semibold">
-                Federal University of Petroleum Resources, Effurun
-              </p>
-              <p>Bachelor of Engineering (B.Eng), Marine Engineering</p>
-              <p className="opacity-70">January 2019 – October 2026</p>
-            </div>
-          </section>
+    {/* create-bawo-frontend */}
+    <div>
+      <p className="font-semibold">
+        Creator & Maintainer — create-bawo-frontend (Open Source CLI Tool)
+      </p>
+      <p className="opacity-70">2024 – Present | Global Open Source</p>
+      <ul className="list-disc pl-5 mt-2 space-y-1">
+        <li>
+          Architected a zero-configuration CLI that scaffolds production-ready React,
+          Vite, and Next.js applications in seconds.
+        </li>
+        <li>
+          Automated setup for Tailwind CSS, state management, animations, linting,
+          and project structure.
+        </li>
+        <li>
+          Maintained documentation, release pipelines, and template versioning.
+        </li>
+        <li className="opacity-70">
+          Stack: Node.js, JavaScript, TypeScript, Inquirer
+        </li>
+      </ul>
+    </div>
 
-          {/* Skills */}
-          <section>
-            <h2 className="text-[16px] font-extrabold uppercase">
-              Skills & Technologies
-            </h2>
+  </div>
+</section>
 
-            <div className="mt-2 space-y-2 text-[14px]">
-              <p>
-                <span className="font-semibold">Proficient:</span>{" "}
-                JavaScript, React.js, Next.js, HTML/CSS, Tailwind CSS, MongoDB
-              </p>
 
-              <p>
-                <span className="font-semibold">Familiar:</span>{" "}
-                Blockchain (Ethereum, Base, Solana)
-              </p>
-            </div>
-          </section>
+       
+       {/* ================= PAGE 2 ================= */}
+<section className="space-y-8">
 
-          {/* Experience – Page 1 */}
-          <section>
-            <h2 className="text-[16px] font-extrabold uppercase">
-              Professional Experience
-            </h2>
+  {/* ChronoliteNG */}
+  <div>
+    <p className="font-semibold">
+      Founder & Product Engineer — ChronoliteNG (E-Commerce Platform)
+    </p>
+    <p className="opacity-70">2023 – Present | Nigeria</p>
+    <ul className="list-disc pl-5 mt-2 space-y-1">
+      <li>
+        Built a full-featured watch e-commerce platform with dynamic catalog management and mobile-first UX.
+      </li>
+      <li>
+        Implemented WhatsApp ordering automation, discount logic, and cart workflows.
+      </li>
+      <li className="opacity-70">
+        Stack: React, Tailwind CSS, JavaScript
+      </li>
+    </ul>
+  </div>
 
-            <div className="mt-4 space-y-6 text-[14px]">
+  {/* TechJojo */}
+  <div>
+    <p className="font-semibold">
+      Founder & Engineer — TechJojo (Gadget Commerce Platform)
+    </p>
+    <p className="opacity-70">2023 – 2024 | Nigeria</p>
+    <ul className="list-disc pl-5 mt-2 space-y-1">
+      <li>
+        Built a lightweight commerce platform powered by Google Sheets as a real-time backend.
+      </li>
+      <li>
+        Implemented inventory syncing and WhatsApp checkout automation.
+      </li>
+      <li className="opacity-70">
+        Stack: React, Google Sheets API
+      </li>
+    </ul>
+  </div>
 
-              {/* MJS */}
-              <div>
-                <p className="font-semibold">Intern, MJS Maritime Limited</p>
-                <p className="opacity-70">June 2024 – December 2024 | On-site</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Assisted senior engineers in assessing and mitigating marine corrosion.</li>
-                  <li>Gained hands-on experience in preventive maintenance strategies.</li>
-                </ul>
-              </div>
+  {/* Engineering Project */}
+  <div>
+    <p className="font-semibold">
+      Lead Design Engineer — MV Blue Ocean Water Hyacinth Harvester (Academic Project)
+    </p>
+    <p className="opacity-70">2024 – Present | Nigeria</p>
+    <ul className="list-disc pl-5 mt-2 space-y-1">
+      <li>
+        Led conveyor system design for biomass intake, transport efficiency, and clog resistance.
+      </li>
+      <li>
+        Performed CAD modelling, mechanical calculations, and system validation.
+      </li>
+      <li className="opacity-70">
+        Stack: SolidWorks, AutoCAD, Mechanical Design
+      </li>
+    </ul>
+  </div>
 
-              {/* Ron */}
-              <div>
-                <p className="font-semibold">Ron’s Crypto Therapy</p>
-                <p className="opacity-70">December 2024 | Remote, United States</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Built crypto payment platform integrated with mentorship services.</li>
-                  <li>Implemented fiat-to-crypto transaction flows.</li>
-                  <li>Designed scalable frontend architecture.</li>
-                  <li className="opacity-70">Technologies: React, TypeScript</li>
-                </ul>
-              </div>
+  {/* Freelance */}
+  <div>
+    <p className="font-semibold">Software Engineer — Freelance</p>
+    <p className="opacity-70">2023 – Present | Remote</p>
+    <ul className="list-disc pl-5 mt-2 space-y-1">
+      <li>
+        Delivered crypto dashboards, APIs, NFT tools, landing pages, and internal platforms.
+      </li>
+      <li>
+        Supported deployment pipelines, performance optimization, and scaling.
+      </li>
+      <li className="opacity-70">
+        Stack: Node.js, MongoDB, React
+      </li>
+    </ul>
+  </div>
 
-              {/* Create Bawo */}
-              <div>
-                <p className="font-semibold">
-                  Create-Bawo-Frontend (Open Source CLI)
-                </p>
-                <p className="opacity-70">2024 | Global, Open Source</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Zero-config CLI for React and Vite projects.</li>
-                  <li>Automated Tailwind, GSAP and state tooling.</li>
-                  <li className="opacity-70">Technologies: Node.js, JavaScript</li>
-                </ul>
-              </div>
+</section>
 
-            </div>
-          </section>
-        </section>
-
-        {/* ================= PAGE 2 ================= */}
-        <section className="space-y-10">
-
-          {/* TechJojo */}
-          <div>
-            <p className="font-semibold">TechJojo (Gadget E-Commerce Platform)</p>
-            <p className="opacity-70">2023 | Remote, Nigeria</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Built WhatsApp e-commerce flow.</li>
-              <li>Google Sheets used as backend.</li>
-              <li className="opacity-70">Stack: React, Google Sheets API</li>
-            </ul>
-          </div>
-
-          {/* Freelance */}
-          <div>
-            <p className="font-semibold">Software Engineer (Freelance)</p>
-            <p className="opacity-70">December 2023 | Remote</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Built crypto dashboards and backend systems.</li>
-              <li>Cross-chain NFT tooling.</li>
-              <li className="opacity-70">Stack: Node.js, MongoDB</li>
-            </ul>
-          </div>
-
-          {/* Chucksale */}
-          <div>
-            <p className="font-semibold">Core Team Member, Chucksale</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Base ecosystem crypto platform.</li>
-              <li>Deployment management.</li>
-            </ul>
-          </div>
-
-          {/* FrontCartel */}
-          <div>
-            <p className="font-semibold">Software Developer, FrontCartel</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>NFT rarity checker tools.</li>
-              <li>SEO optimized landing pages.</li>
-            </ul>
-          </div>
-
-        </section>
       </div>
     </div>
     
