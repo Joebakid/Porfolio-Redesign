@@ -53,8 +53,8 @@ const resumeData = {
       period: "2024 – Present",
       description: "Open Source CLI Tool",
       bullets: [
-        "Architected and published a zero-configuration CLI tool that scaffolds production-ready React, Vite, and Next.js applications in seconds.",
-        "Automated project bootstrapping including Tailwind CSS, Zustand/Redux, GSAP, Framer Motion, ESLint, folder structure, and environment setup.",
+        "Architected and published a zero-configuration CLI tool that scaffolds production-ready React, Vite,Vue and Next.js applications in seconds.",
+        "Automated project bootstrapping including Tailwind CSS, Zustand/Redux,Pinia[Vue data Management], GSAP, Framer Motion, ESLint, folder structure, and environment setup.",
         "Built interactive CLI prompts, template generators, and validation logic to reduce onboarding friction for developers.",
         "Maintained documentation, versioning, release pipelines, and community feedback cycles.",
         "Continuously refactored templates to support modern tooling versions and performance optimizations.",
