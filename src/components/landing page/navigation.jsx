@@ -4,27 +4,26 @@ import { useTheme } from "../theme/theme-context";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 
+const LANGS = [
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
+  { code: "es", label: "ES" },
+  { code: "de", label: "DE" },
+  { code: "ru", label: "RU" },
+  { code: "zh-CN", label: "CN" },
+  { code: "ja", label: "JP" },
+  { code: "ko", label: "KR" },
+];
+
 export default function Navigation() {
-  const { theme, toggleTheme } = useTheme(); // ✅ no setTheme
+  const { theme, toggleTheme } = useTheme();
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
+  const [lang, setLang] = useState(
+    () => localStorage.getItem("lang") || "en"
+  );
+
   const navRef = useRef(null);
-
-  /* -------- Intro animation -------- */
-  // useLayoutEffect(() => {
-  //   if (!navRef.current) return;
-
-  //   gsap.fromTo(
-  //     navRef.current,
-  //     { opacity: 0, scale: 0.98 },
-  //     {
-  //       opacity: 1,
-  //       scale: 1,
-  //       duration: 0.4,
-  //       ease: "power2.out",
-  //     }
-  //   );
-  // }, []);
 
   /* -------- Scroll hide / show -------- */
   useEffect(() => {
@@ -44,25 +43,32 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
+  /* -------- Language Change -------- */
+  function changeLang(e) {
+    const value = e.target.value;
+    setLang(value);
+
+    if (window.setSiteLanguage) {
+      window.setSiteLanguage(value);
+    }
+  }
+
   return (
     <nav
       ref={navRef}
-      className={`print:hidden
-        fixed top-4 inset-x-0 z-50
-        flex justify-center
-        transition-all duration-300
-        ${hidden ? "opacity-0 pointer-events-none" : "opacity-100"}
-      `}
+      className={`print:hidden fixed top-4 inset-x-0 z-50 flex justify-center transition-all duration-300 ${
+        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
     >
       <div
         className="
-          flex items-center gap-4
+          flex items-center gap-3
           px-4 py-2
           max-w-max
           rounded-full
           backdrop-blur-xl
           shadow-lg
-          border border-white/10 
+          border border-white/10
         "
         style={{ background: "var(--nav-bg)" }}
       >
@@ -74,7 +80,10 @@ export default function Navigation() {
           <FaGithub />
         </IconLink>
 
-        <IconLink href="https://www.linkedin.com/in/josephbawo/" label="LinkedIn">
+        <IconLink
+          href="https://www.linkedin.com/in/josephbawo/"
+          label="LinkedIn"
+        >
           <FaLinkedin />
         </IconLink>
 
@@ -82,7 +91,31 @@ export default function Navigation() {
           <FaXTwitter />
         </IconLink>
 
-        {/* ✅ Correct theme toggle */}
+        {/* 🌍 Language Selector */}
+        <select
+          value={lang}
+          onChange={changeLang}
+          className="
+            ml-1
+            text-[11px] md:text-xs
+            px-2 py-1
+            rounded-full
+            border border-white/20
+            bg-transparent
+            backdrop-blur
+            hover:opacity-80
+            transition
+            cursor-pointer
+          "
+        >
+          {LANGS.map((l) => (
+            <option key={l.code} value={l.code} className="bg-black">
+              {l.label}
+            </option>
+          ))}
+        </select>
+
+        {/* 🌗 Theme Toggle */}
         <button
           onClick={toggleTheme}
           className="
@@ -96,7 +129,7 @@ export default function Navigation() {
             cursor-pointer
           "
         >
-           {theme === "light" ? "Gray" : "Light"}
+          {theme === "light" ? "Gray" : "Light"}
         </button>
       </div>
     </nav>
