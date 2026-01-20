@@ -60,7 +60,7 @@ export default function Experience() {
         <p>
           Built{" "}
           <a
-            href="https://techjojoenterprises.vercel.app/"
+            href="https://www.techjojo.store/"
             target="_blank"
             className="font-extrabold text-[color:var(--link-accent)] underline"
           >

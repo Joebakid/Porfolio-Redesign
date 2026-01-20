@@ -75,6 +75,15 @@ export default function Projects() {
       live: "https://tic-tac-tan-one.vercel.app/",
       github: "https://github.com/Joebakid/tic-tac",
     },
+    {
+  title: "Tech Jojo",
+  description:
+    "A modern tech-commerce platform for selling laptops, accessories, and consumer electronics with WhatsApp ordering flow, dynamic product listings, and mobile-first responsive design. Built for fast browsing, conversion optimization, and scalable product management.",
+  stack: "React, Tailwind CSS, Firebase, Vercel",
+  live: "https://techjojo.store/",
+  github: "https://github.com/Joebakid/techjojo",
+},
+
   ];
 
   return (
