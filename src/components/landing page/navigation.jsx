@@ -5,15 +5,60 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 
 const LANGS = [
-  { code: "en", label: "EN" },
-  { code: "fr", label: "FR" },
-  { code: "es", label: "ES" },
-  { code: "de", label: "DE" },
-  { code: "ru", label: "RU" },
-  { code: "zh-CN", label: "CN" },
-  { code: "ja", label: "JP" },
-  { code: "ko", label: "KR" },
+  // 🌍 Global
+  { code: "en", label: "EN" }, // English
+  { code: "fr", label: "FR" }, // French
+  { code: "es", label: "ES" }, // Spanish
+  { code: "de", label: "DE" }, // German
+  { code: "pt", label: "PT" }, // Portuguese
+  { code: "it", label: "IT" }, // Italian
+  { code: "nl", label: "NL" }, // Dutch
+  { code: "sv", label: "SV" }, // Swedish
+  { code: "no", label: "NO" }, // Norwegian
+  { code: "da", label: "DA" }, // Danish
+  { code: "fi", label: "FI" }, // Finnish
+  { code: "pl", label: "PL" }, // Polish
+  { code: "cs", label: "CS" }, // Czech
+  { code: "sk", label: "SK" }, // Slovak
+  { code: "hu", label: "HU" }, // Hungarian
+  { code: "ro", label: "RO" }, // Romanian
+  { code: "bg", label: "BG" }, // Bulgarian
+  { code: "el", label: "EL" }, // Greek
+  { code: "tr", label: "TR" }, // Turkish
+  { code: "uk", label: "UK" }, // Ukrainian
+  { code: "ru", label: "RU" }, // Russian
+
+  // 🌍 Asia
+  { code: "zh-CN", label: "CN" }, // Chinese Simplified
+  { code: "zh-TW", label: "TW" }, // Chinese Traditional
+  { code: "ja", label: "JP" }, // Japanese
+  { code: "ko", label: "KR" }, // Korean
+  { code: "hi", label: "HI" }, // Hindi
+  { code: "bn", label: "BN" }, // Bengali
+  { code: "ur", label: "UR" }, // Urdu
+  { code: "ta", label: "TA" }, // Tamil
+  { code: "te", label: "TE" }, // Telugu
+  { code: "th", label: "TH" }, // Thai
+  { code: "vi", label: "VI" }, // Vietnamese
+  { code: "id", label: "ID" }, // Indonesian
+  { code: "ms", label: "MS" }, // Malay
+  { code: "tl", label: "TL" }, // Filipino
+
+  // 🌍 Middle East
+  { code: "ar", label: "AR" }, // Arabic
+  { code: "fa", label: "FA" }, // Persian
+  { code: "he", label: "HE" }, // Hebrew
+
+  // 🌍 Africa
+  { code: "sw", label: "SW" }, // Swahili
+  { code: "yo", label: "YO" }, // Yoruba
+  { code: "ig", label: "IG" }, // Igbo
+  { code: "ha", label: "HA" }, // Hausa
+  { code: "am", label: "AM" }, // Amharic
+  { code: "zu", label: "ZU" }, // Zulu
+  { code: "xh", label: "XH" }, // Xhosa
 ];
+
 
 export default function Navigation() {
   const { theme, toggleTheme } = useTheme();
@@ -54,14 +99,17 @@ export default function Navigation() {
   }
 
   return (
-    <nav
-      ref={navRef}
-      className={`print:hidden fixed top-4 inset-x-0 z-50 flex justify-center transition-all duration-300 ${
-        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-    >
+  <nav
+  ref={navRef}
+  className={`print:hidden fixed inset-x-0 z-50 flex justify-center transition-all duration-300
+    ${hidden ? "opacity-0 pointer-events-none" : "opacity-100"}
+  `}
+  style={{ top: "2.5rem" }}   // ← THIS replaces my-12
+>
+
+
       <div
-        className="
+        className=" 
           flex items-center gap-3
           px-4 py-2
           max-w-max
