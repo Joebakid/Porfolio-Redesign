@@ -8,6 +8,7 @@ import Resume from "./components/landing page/Resume";
 import Home from "./pages/Home";
 import BlogList from "./components/blog/BlogList";
 import Likes from "./components/landing page/likes";
+import NotFound from "./components/landing page/NotFound";
 
 import { ThemeProvider } from "./components/theme/theme-context";
 import { AppProvider } from "./state/AppContext";
@@ -174,6 +175,8 @@ function App() {
                 </div>
               }
             />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <Footer />
