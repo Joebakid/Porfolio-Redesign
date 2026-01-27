@@ -46,6 +46,47 @@ const resumeData = {
         "Next.js, React, TypeScript, wagmi, viem, OnchainKit, Tailwind CSS, GSAP, Vercel",
     },
 
+{
+  company: "Gudrix",
+  role: " Fullstack Engineer",
+  location: "Remote",
+  period: "2024 – Present",
+  description: "Footwear E-Commerce Platform",
+  bullets: [
+    "Designed and built a production-grade footwear e-commerce platform enabling users to browse products, manage carts, and complete fast checkout flows across mobile and desktop devices.",
+    "Implemented a scalable React + Vite architecture with modular components, reusable UI patterns, and optimized state management for smooth shopping experience.",
+    "Integrated Supabase for product catalog management, image storage, order persistence, and admin dashboard operations.",
+    "Built Paystack payment processing and WhatsApp checkout automation for local Nigerian payment workflows and customer communication.",
+    "Developed an internal admin dashboard for inventory management, product uploads, pricing updates, and analytics visibility.",
+    "Optimized performance, SEO metadata, and responsive layouts using Tailwind CSS and Vercel deployment best practices.",
+  ],
+  technologies:
+    "React, Vite, JavaScript, Tailwind CSS, Supabase (Postgres + Storage), Paystack API, WhatsApp API, Vercel",
+},
+
+
+{
+  company: "LiveOutLoud",
+  role: "Fullstack Engineer",
+  location: "Remote",
+  period: "2024 – Present",
+  description: "Wellness & Fashion E-Commerce Platform",
+  bullets: [
+    "Designed and built a mobile-first wellness and fashion e-commerce platform focused on smooth browsing, fast ordering, and visually engaging UI experiences.",
+    "Implemented a scalable React frontend with Vite, reusable component architecture, and a consistent pastel design system using Tailwind CSS.",
+    "Integrated Supabase and Firebase for product management, media storage, admin operations, and secure data persistence.",
+    "Built a self-service admin dashboard allowing non-technical users to upload products, manage inventory, update pricing, and publish content without developer assistance.",
+    "Implemented Paystack-powered checkout flows to support Nigerian payments and automated order capture.",
+    "Integrated Resend.com for transactional email delivery, sending real-time order confirmations and admin notifications.",
+    "Developed a custom cart system with real-time updates, local persistence, and optimized UX for repeat customers.",
+    "Deployed and maintained production infrastructure on Vercel with environment management, performance tuning, and continuous delivery.",
+  ],
+  technologies:
+    "React, Vite, JavaScript, Tailwind CSS, Supabase, Firebase, Paystack API, Resend API, Vercel",
+},
+
+
+
     {
       company: "create-bawo-frontend",
       role: "Creator & Maintainer",

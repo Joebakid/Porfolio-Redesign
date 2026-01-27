@@ -58,6 +58,19 @@ export default function Experience() {
   — a modern footwear e-commerce platform with seamless checkout experience.
 </p>
 
+<p>
+  Built{" "}
+  <a
+    href="https://liveoutloud.com.ng"
+    target="_blank"
+    className="font-extrabold text-[color:var(--link-accent)] underline"
+  >
+    LiveOutLoud
+  </a>{" "}
+  — a wellness and fashion e-commerce platform with a soft, mobile-first shopping experience.
+</p>
+
+
 
         <p>
           Developed{" "}

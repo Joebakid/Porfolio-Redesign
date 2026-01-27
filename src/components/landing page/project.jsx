@@ -11,12 +11,23 @@ export default function Projects() {
 {
   title: "Gudrix (Scalable E-Commerce System)",
   description:
-    "A production-grade footwear e-commerce system featuring a modular React architecture, Supabase database and storage, real-time cart state management, secure Paystack payment processing, automated WhatsApp checkout flow, admin inventory dashboard, and performance-optimized UI with Tailwind CSS and Vite.",
+    "A production-grade footwear e-commerce system featuring a modular React architecture, Firebase database and storage, real-time cart state management, secure Paystack payment processing, automated WhatsApp checkout flow, admin inventory dashboard, and performance-optimized UI with Tailwind CSS and Vite.",
   stack:
-    "React, Vite, Tailwind CSS, Supabase (Postgres + Storage), JavaScript, Vercel",
+    "React, Vite, Tailwind CSS, Firebase , JavaScript, Vercel",
   live: "https://www.gudrix.com.ng/shop",
   github: "https://github.com/Joebakid/Gudrix",
 },
+{
+  title: "LiveOutLoud (Wellness & Fashion E-Commerce Store)",
+  description:
+    "A feminine-focused e-commerce platform for wellness products and stylish fashion items. Features a responsive React frontend, Supabase backend for product management and storage, Paystack payment integration, cart system, admin dashboard for inventory control, and a soft pastel UI design optimized for mobile shopping experience.",
+  stack:
+    "React, Vite, Tailwind CSS, Supabase, Paystack API, JavaScript, Vercel",
+  live: "https://liveoutloud.com.ng",
+  github: "https://github.com/Joebakid/Ofure-store",
+},
+
+
 
 
     {
