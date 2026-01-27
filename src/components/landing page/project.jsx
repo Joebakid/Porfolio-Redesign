@@ -8,6 +8,16 @@ export default function Projects() {
   live: "https://create-bawo-frontend.vercel.app/",
   github: "https://github.com/Joebakid/create-bawo-frontend",
 },
+{
+  title: "Gudrix (Scalable E-Commerce System)",
+  description:
+    "A production-grade footwear e-commerce system featuring a modular React architecture, Supabase database and storage, real-time cart state management, secure Paystack payment processing, automated WhatsApp checkout flow, admin inventory dashboard, and performance-optimized UI with Tailwind CSS and Vite.",
+  stack:
+    "React, Vite, Tailwind CSS, Supabase (Postgres + Storage), JavaScript, Vercel",
+  live: "https://www.gudrix.com.ng/shop",
+  github: "https://github.com/Joebakid/Gudrix",
+},
+
 
     {
       title: "Tetris Game",

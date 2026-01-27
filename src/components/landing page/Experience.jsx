@@ -45,6 +45,20 @@ export default function Experience() {
           with fiat-to-crypto payment integration.
         </p>
 
+
+<p>
+  Built{" "}
+  <a
+    href="https://www.gudrix.com.ng/shop"
+    target="_blank"
+    className="font-extrabold text-[color:var(--link-accent)] underline"
+  >
+    Gudrix Shop
+  </a>{" "}
+  — a modern footwear e-commerce platform with seamless checkout experience.
+</p>
+
+
         <p>
           Developed{" "}
           <a
