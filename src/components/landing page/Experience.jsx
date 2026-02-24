@@ -6,6 +6,23 @@ export default function Experience() {
       </h2>
 
       <div className="space-y-3 text-[14px] leading-relaxed md:text-[16px]">
+
+
+     <p>
+  I built{" "}
+  <a
+    href="https://www.vibelux.ng/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-extrabold text-[color:var(--link-accent)] underline hover:opacity-80 transition"
+  >
+    Vibelux
+  </a>
+  , an online ticketing platform designed to help users discover events and
+  purchase party tickets seamlessly.
+</p>
+
+
         <p>
           Built{" "}
           <a

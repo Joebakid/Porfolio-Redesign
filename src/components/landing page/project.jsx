@@ -1,5 +1,14 @@
 export default function Projects() {
   const projects = [
+
+    {
+  title: "Vibelux (Event Ticketing Platform)",
+  description:
+    "A full-stack event ticketing platform that enables organizers to create and manage events while allowing users to discover, book, and securely purchase party tickets online. Features include real-time ticket availability, secure payment integration, scanned-based ticket verification, admin dashboard management, email notifications, and responsive mobile-first design. Built to streamline event operations and enhance the digital ticketing experience.",
+  stack: "React, Vite, Supabase, PostgreSQL, Paystack, Tailwind CSS, Cloudinary",
+  live: "https://www.vibelux.ng/",
+  github: "https://github.com/Joebakid/Vibelux",
+},
     {
   title: "create-bawo-frontend (CLI Tool)",
   description:
