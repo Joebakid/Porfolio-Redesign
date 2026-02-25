@@ -6,7 +6,7 @@ export default function Resume() {
   return (
     <>
       {/* Download Button */}
-      <div className="container-main flex justify-end mb-4">
+      <div className="container-main flex justify-end my-12 ">
         <button
           onClick={() => window.open("/resume/pdf", "_blank")}
           className="

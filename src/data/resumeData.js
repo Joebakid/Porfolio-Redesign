@@ -45,6 +45,23 @@ const resumeData = {
       technologies:
         "Next.js, React, TypeScript, wagmi, viem, OnchainKit, Tailwind CSS, GSAP, Vercel",
     },
+    {
+  company: "Vibelux",
+  role: " Full-Stack Engineer",
+  location: "Remote",
+  period: "2024",
+  description: "Full-Stack Event & Admin Management Platform",
+  bullets: [
+    "Designed and built a full-stack web platform with user authentication, admin dashboards, order management, and dynamic content handling.",
+    "Implemented Supabase authentication and Row Level Security (RLS) policies to enforce secure role-based access control between users and admins.",
+    "Built real-time data workflows for events, orders, and uploads, including image storage integration and optimized query performance.",
+    "Developed structured admin panels with pagination, filtering, and activity logging to improve operational visibility.",
+    "Handled production debugging, database schema design, and API integration while ensuring scalable and maintainable architecture.",
+    "Deployed frontend and backend integrations with environment configuration and security best practices.",
+  ],
+  technologies:
+    "React, Vite, JavaScript, Supabase, PostgreSQL, Tailwind CSS, Cloudinary, Vercel",
+},
 
 {
   company: "Gudrix",
