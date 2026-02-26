@@ -16,13 +16,10 @@ export default function Resume() {
           margin: 0,
           filename: `${personal.name.replace(/\s+/g, "_")}_Resume.pdf`,
           pagebreak: { mode: ["css", "legacy"] },
-          html2canvas: {
-            scale: 2,
-            useCORS: true,
-          },
+          html2canvas: { scale: 2, useCORS: true },
           jsPDF: {
             unit: "px",
-            format: [794, 1123], // Exact A4 in px
+            format: [794, 1123],
             orientation: "portrait",
           },
         })
@@ -35,83 +32,120 @@ export default function Resume() {
   return (
     <div
       style={{
-        background: "#f3f4f6",
+        background: "linear-gradient(to bottom, #eef2ff, #f8fafc)",
         minHeight: "100vh",
-        padding: "60px 0",
+        padding: "80px 20px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
       }}
     >
-      {/* CLICKABLE BUTTON WRAPPER */}
-      <div
+      {/* BUTTON */}
+      <button
         onClick={handleDownload}
         style={{
-          marginBottom: "40px",
-            marginTop: "100px",
-          padding: "16px 28px",
-          backgroundColor: "#2563eb",
-          color: "white",
+          marginBottom: "50px",
+           marginTop: "50px",
+          padding: "14px 28px",
+          background: "#4f46e5",
+          color: "#fff",
           fontWeight: 600,
-          fontSize: "16px",
-          borderRadius: "8px",
+          fontSize: "15px",
+          borderRadius: "10px",
+          border: "none",
           cursor: "pointer",
-          userSelect: "none",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+          boxShadow: "0 10px 25px rgba(79,70,229,0.25)",
           transition: "all 0.2s ease",
         }}
         onMouseEnter={(e) =>
-          (e.currentTarget.style.backgroundColor = "#1e40af")
+          (e.currentTarget.style.transform = "translateY(-2px)")
         }
         onMouseLeave={(e) =>
-          (e.currentTarget.style.backgroundColor = "#2563eb")
+          (e.currentTarget.style.transform = "translateY(0)")
         }
       >
         Download Resume (PDF)
-      </div>
+      </button>
 
-      {/* PDF CONTENT */}
+      {/* RESUME CARD */}
       <div
         ref={pdfRef}
         style={{
-          width: "794px",          // A4 width
-          minHeight: "1123px",     // A4 height
-          padding: "60px",
+          width: "100%",
+          maxWidth: "794px",
+          minHeight: "1123px",
+          padding: "clamp(30px, 5vw, 60px)",
           background: "#ffffff",
-          color: "#000000",
-          fontFamily: "Arial, sans-serif",
+          borderRadius: "16px",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+          color: "#1f2937",
+          fontFamily: "Inter, Arial, sans-serif",
           fontSize: "14px",
-          lineHeight: "1.6",
+          lineHeight: "1.7",
           boxSizing: "border-box",
         }}
       >
         {/* HEADER */}
-        <div style={{ borderBottom: "2px solid #000", paddingBottom: 10, marginBottom: 30 }}>
-          <h1 style={{ margin: 0, fontSize: "24px" }}>{personal.name}</h1>
-          <p style={{ margin: "5px 0 0", color: "#444" }}>
-            {personal.email} | {personal.github}
-          </p>
+        <div style={{ marginBottom: 40 }}>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "28px",
+              fontWeight: 700,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            {personal.name}
+          </h1>
+
+          <div
+            style={{
+              marginTop: 8,
+              fontSize: "14px",
+              color: "#6b7280",
+            }}
+          >
+            {personal.email} • {personal.github}
+          </div>
+
+          <div
+            style={{
+              height: "3px",
+              width: "60px",
+              background: "#4f46e5",
+              marginTop: "20px",
+              borderRadius: "2px",
+            }}
+          />
         </div>
 
         {/* EDUCATION */}
         <Section title="Education">
           {education.map((edu, i) => (
-            <div key={i} style={{ marginBottom: 12 }}>
+            <div key={i} style={{ marginBottom: 16 }}>
               <div style={{ fontWeight: 600 }}>{edu.school}</div>
-              <div>{edu.degree}</div>
-              <div style={{ color: "#555" }}>{edu.period}</div>
+              <div style={{ color: "#374151" }}>{edu.degree}</div>
+              <div style={{ fontSize: "13px", color: "#6b7280" }}>
+                {edu.period}
+              </div>
             </div>
           ))}
         </Section>
 
         {/* SKILLS */}
         <Section title="Skills">
-          <p>
-            <strong>Proficient:</strong> {skills.proficient.join(", ")}
-          </p>
-          <p>
-            <strong>Familiar:</strong> {skills.familiar.join(", ")}
-          </p>
+          <div style={{ marginBottom: 8 }}>
+            <strong>Proficient:</strong>{" "}
+            <span style={{ color: "#374151" }}>
+              {skills.proficient.join(", ")}
+            </span>
+          </div>
+          <div>
+            <strong>Familiar:</strong>{" "}
+            <span style={{ color: "#6b7280" }}>
+              {skills.familiar.join(", ")}
+            </span>
+          </div>
         </Section>
 
         {/* EXPERIENCE */}
@@ -120,19 +154,40 @@ export default function Resume() {
             <div
               key={i}
               style={{
-                marginBottom: 25,
+                marginBottom: 28,
                 pageBreakInside: "avoid",
               }}
             >
-              <div style={{ fontWeight: 600 }}>
+              <div
+                style={{
+                  fontWeight: 600,
+                  fontSize: "15px",
+                }}
+              >
                 {job.role} — {job.company}
               </div>
-              <div style={{ color: "#555", marginBottom: 6 }}>
+
+              <div
+                style={{
+                  fontSize: "13px",
+                  color: "#6b7280",
+                  marginBottom: 10,
+                }}
+              >
                 {job.period}
               </div>
-              <ul style={{ paddingLeft: 20, margin: 0 }}>
+
+              <ul
+                style={{
+                  paddingLeft: 20,
+                  margin: 0,
+                  color: "#374151",
+                }}
+              >
                 {job.bullets.map((b, index) => (
-                  <li key={index}>{b}</li>
+                  <li key={index} style={{ marginBottom: 6 }}>
+                    {b}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -143,20 +198,21 @@ export default function Resume() {
   );
 }
 
-/* SECTION COMPONENT */
 function Section({ title, children }) {
   return (
-    <div style={{ marginBottom: 35 }}>
+    <div style={{ marginBottom: 40 }}>
       <h2
         style={{
-          marginBottom: 15,
-          borderBottom: "1px solid #000",
-          paddingBottom: 6,
-          fontSize: "18px",
+          fontSize: "16px",
+          fontWeight: 600,
+          marginBottom: 16,
+          color: "#111827",
+          letterSpacing: "0.3px",
         }}
       >
         {title}
       </h2>
+
       {children}
     </div>
   );
