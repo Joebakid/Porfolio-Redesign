@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import html2pdf from "html2pdf.js";
 import resumeData from "../../data/resumeData";
 
@@ -6,141 +6,95 @@ export default function ResumePDF() {
   const { personal, education, skills, experience } = resumeData;
   const pdfRef = useRef(null);
 
-  useEffect(() => {
-    // ⏳ Give Google Translate enough time to fully translate all pages
-    const timer = setTimeout(() => {
-      generatePDF();
-    }, 4000); // 4 seconds is much more reliable
+  const handleDownload = () => {
+    const element = pdfRef.current;
+    if (!element) return;
 
-    return () => clearTimeout(timer);
-  }, []);
+    const opt = {
+      margin: 0,
+      filename: `${personal.name.replace(/\s+/g, "_")}_Resume.pdf`,
+      image: { type: "jpeg", quality: 1 },
+      html2canvas: {
+        scale: 3, // higher quality
+        useCORS: true,
+        scrollY: 0,
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+      },
+    };
 
-  function generatePDF() {
-    if (!pdfRef.current) return;
-
-    // Force reflow to ensure final DOM snapshot
-    pdfRef.current.style.transform = "scale(1)";
-    pdfRef.current.offsetHeight;
-
-    html2pdf()
-      .from(pdfRef.current)
-      .set({
-        margin: 8,
-        filename: `${personal.name.replace(/\s+/g, "_")}_Resume.pdf`,
-        html2canvas: {
-          scale: 2.5,
-          useCORS: true,
-          windowWidth: pdfRef.current.scrollWidth,
-        },
-        jsPDF: {
-          unit: "mm",
-          format: "a4",
-          orientation: "portrait",
-        },
-        pagebreak: {
-          mode: ["avoid-all", "css", "legacy"],
-        },
-      })
-      .save();
-  }
+    html2pdf().set(opt).from(element).save();
+  };
 
   return (
-    <div className="min-h-screen bg-white text-black flex justify-center">
-      {/* PDF CAPTURE AREA */}
+    <div className="min-h-screen bg-gray-100 py-10 flex flex-col items-center">
+      
+      {/* Download Button */}
+      <button
+        onClick={handleDownload}
+        className="px-8 py-3 mb-6 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
+      >
+        Download PDF
+      </button>
+
+      {/* Resume Layout */}
       <div
         ref={pdfRef}
-        id="resume-pdf"
-        className="w-[794px] px-8 py-10 space-y-10"
+        className="w-[210mm] min-h-[297mm] bg-white text-black p-[15mm] text-[13px]"
+        style={{ fontFamily: "Arial, sans-serif" }}
       >
-        {/* ================= HEADER ================= */}
-        <header className="space-y-1">
-          <h1 className="text-2xl font-extrabold">
-            {personal.name}
-          </h1>
+        {/* HEADER */}
+        <h1 className="text-[22px] font-bold uppercase">
+          {personal.name}
+        </h1>
+        <p className="mb-6 text-sm">
+          {personal.email} | {personal.github}
+        </p>
 
-          <p className="text-[14px] opacity-80">
-            {personal.email} | GitHub
-          </p>
-        </header>
-
-        {/* ================= EDUCATION ================= */}
-        <section>
-          <h2 className="text-[16px] font-extrabold uppercase">
-            Education
-          </h2>
-
-          {education.map((edu, index) => (
-            <div key={index} className="mt-2 space-y-1 text-[14px]">
-              <p className="font-semibold">{edu.school}</p>
-              <p>{edu.degree}</p>
-              <p className="opacity-70">{edu.period}</p>
-            </div>
-          ))}
-        </section>
-
-        {/* ================= SKILLS ================= */}
-        <section>
-          <h2 className="text-[16px] font-extrabold uppercase">
-            Skills & Technologies
-          </h2>
-
-          <div className="mt-2 space-y-2 text-[14px]">
-            <p>
-              <span className="font-semibold">Proficient:</span>{" "}
-              {skills.proficient.join(", ")}
-            </p>
-
-            <p>
-              <span className="font-semibold">Familiar:</span>{" "}
-              {skills.familiar.join(", ")}
-            </p>
+        {/* EDUCATION */}
+        <h2 className="font-bold uppercase border-b pb-1 mb-3">
+          Education
+        </h2>
+        {education.map((edu, index) => (
+          <div key={index} className="mb-3">
+            <p className="font-semibold">{edu.school}</p>
+            <p>{edu.degree}</p>
+            <p className="text-gray-500 italic">{edu.period}</p>
           </div>
-        </section>
+        ))}
 
-        {/* ================= EXPERIENCE ================= */}
-        <section className="space-y-6">
-          <h2 className="text-[16px] font-extrabold uppercase">
-            Professional Experience
-          </h2>
+        {/* SKILLS */}
+        <h2 className="font-bold uppercase border-b pb-1 mt-6 mb-3">
+          Skills
+        </h2>
+        <p>
+          <strong>Proficient:</strong> {skills.proficient.join(", ")}
+        </p>
+        <p>
+          <strong>Familiar:</strong> {skills.familiar.join(", ")}
+        </p>
 
-          {experience.map((job, index) => (
-            <div key={index} className="break-inside-avoid">
-              <p className="font-semibold">
-                {job.role} — {job.company}{" "}
-                {job.description && (
-                  <span className="opacity-70">
-                    ({job.description})
-                  </span>
-                )}
-              </p>
-
-              <p className="opacity-70">
-                {job.period} | {job.location}
-              </p>
-
-              <ul className="list-disc pl-5 mt-2 space-y-1 text-[14px]">
-                {job.bullets.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-
-                <li className="opacity-70">
-                  Stack: {job.technologies}
-                </li>
-              </ul>
-            </div>
-          ))}
-        </section>
+        {/* EXPERIENCE */}
+        <h2 className="font-bold uppercase border-b pb-1 mt-6 mb-3">
+          Experience
+        </h2>
+        {experience.map((job, index) => (
+          <div key={index} className="mb-4">
+            <p className="font-semibold">
+              {job.role} — {job.company}
+            </p>
+            <p className="text-gray-500 text-sm">{job.period}</p>
+            <ul className="list-disc pl-5 mt-2">
+              {job.bullets.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-
-      {/* PRINT SAFETY */}
-      <style>
-        {`
-          .break-inside-avoid {
-            break-inside: avoid;
-            page-break-inside: avoid;
-          }
-        `}
-      </style>
     </div>
   );
 }

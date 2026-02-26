@@ -32,7 +32,7 @@ const resumeData = {
       company: "Base Wallet Checker",
       role: "Founder & Lead Engineer",
       location: "Remote",
-      period: "2024",
+      period: "2025",
       description: "Web3 Analytics Platform",
       bullets: [
         "Designed and built a production-grade wallet analytics platform for the Base blockchain, enabling users to analyze wallet balances, transaction histories, token holdings, and on-chain activity.",
@@ -49,7 +49,7 @@ const resumeData = {
   company: "Vibelux",
   role: " Full-Stack Engineer",
   location: "Remote",
-  period: "2024",
+  period: "2026",
   description: "Full-Stack Event & Admin Management Platform",
   bullets: [
     "Designed and built a full-stack web platform with user authentication, admin dashboards, order management, and dynamic content handling.",
@@ -67,7 +67,7 @@ const resumeData = {
   company: "Gudrix",
   role: " Fullstack Engineer",
   location: "Remote",
-  period: "2024 – Present",
+  period: "2026",
   description: "Footwear E-Commerce Platform",
   bullets: [
     "Designed and built a production-grade footwear e-commerce platform enabling users to browse products, manage carts, and complete fast checkout flows across mobile and desktop devices.",
@@ -86,7 +86,7 @@ const resumeData = {
   company: "LiveOutLoud",
   role: "Fullstack Engineer",
   location: "Remote",
-  period: "2024 – Present",
+  period: "2026",
   description: "Wellness & Fashion E-Commerce Platform",
   bullets: [
     "Designed and built a mobile-first wellness and fashion e-commerce platform focused on smooth browsing, fast ordering, and visually engaging UI experiences.",
@@ -108,7 +108,7 @@ const resumeData = {
       company: "create-bawo-frontend",
       role: "Creator & Maintainer",
       location: "Global Open Source",
-      period: "2024 – Present",
+      period: "2026 – Present",
       description: "Open Source CLI Tool",
       bullets: [
         "Architected and published a zero-configuration CLI tool that scaffolds production-ready React, Vite,Vue and Next.js applications in seconds.",
@@ -125,7 +125,7 @@ const resumeData = {
       company: "ChronoliteNG",
       role: "Founder & Product Engineer",
       location: "Nigeria",
-      period: "2023 – Present",
+      period: "2025 – Present",
       description: "Watch E-Commerce Platform",
       bullets: [
         "Built a full e-commerce frontend for a watch retail brand using React and Tailwind, supporting dynamic product catalogs driven by JSON feeds.",
