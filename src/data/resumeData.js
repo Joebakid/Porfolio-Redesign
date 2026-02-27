@@ -9,7 +9,7 @@ const resumeData = {
     {
       school: "Federal University of Petroleum Resources, Effurun",
       degree: "Bachelor of Engineering (B.Eng), Marine Engineering",
-      period: "January 2019 – October 2026",
+      period: "January 2019 – October 2025",
     },
   ],
 
