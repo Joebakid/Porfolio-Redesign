@@ -9,19 +9,18 @@ const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // if (typeof window !== "undefined") {
-    //   return localStorage.getItem("theme") ?? "gray";
-    // }
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
     return "light";
   });
 
-  // 🔑 Apply theme BEFORE paint (prevents flicker / desync)
+  // Apply theme BEFORE paint (prevents flicker)
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // 🔥 Single source of truth
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "gray" : "light"));
   };

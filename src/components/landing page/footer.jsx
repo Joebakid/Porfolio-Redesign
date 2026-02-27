@@ -47,7 +47,7 @@ export default function Footer() {
               </SocialLink>
 
               <SocialLink
-                href="https://x.com/josephbawo2"
+                href="https://x.com/dogexdrc20"
                 label="Twitter / X"
               >
                 <FaXTwitter />
