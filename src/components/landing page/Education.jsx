@@ -15,7 +15,7 @@ export default function Education() {
         </p>
 
         <p className="opacity-70">
-          January 2019 – October 2026
+          January 2019 – October 2025
         </p>
       </div>
     </section>
