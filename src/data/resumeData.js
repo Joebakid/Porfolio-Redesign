@@ -21,6 +21,15 @@ const resumeData = {
       "HTML/CSS",
       "Tailwind CSS",
       "MongoDB",
+      "Typescript",
+      "Vuejs",
+      "Svelte",
+      "SupaBase",
+      "FireBase",
+      "Gsap",
+      "Framer Motion",
+      "Nodejs",
+      "ExpressJs"
     ],
     familiar: [
       "Blockchain (Ethereum, Base, Solana)",
