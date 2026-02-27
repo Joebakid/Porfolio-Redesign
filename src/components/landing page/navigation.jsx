@@ -122,7 +122,7 @@ export default function Navigation() {
       >
         <NavItem to="/" text="Home" />
         <NavItem to="/resume" text="Resume" />
-        <NavItem to="/bloglist" text="Blog" />
+        <NavItem to="/blog" text="Blog" />
 
         <IconLink href="https://github.com/Joebakid" label="GitHub">
           <FaGithub />
