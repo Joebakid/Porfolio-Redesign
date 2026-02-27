@@ -17,6 +17,10 @@ export default function Stack() {
         </span>
   <span className="  border  rounded-xl px-4 py-1">Express.js,</span>
   <span className="  border  rounded-xl px-4 py-1">MongoDB</span>
+  <span className="  border  rounded-xl px-4 py-1">Vue.js</span>
+  <span className="  border  rounded-xl px-4 py-1">Svelte</span>
+  <span className="  border  rounded-xl px-4 py-1">SupaBase</span>
+  <span className="  border  rounded-xl px-4 py-1">FireBase</span>
       </div>
 
     
