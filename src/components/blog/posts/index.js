@@ -1,5 +1,5 @@
 import Blog4 from "./blog-4";
-// import Blog5 from "./blog-5";
+import BlogSupabase from "./supabase";
 
 /**
  * Blog Post Registry
@@ -13,18 +13,18 @@ const posts = [
     slug: "significance-of-npx-create-bawo-frontend",
     description:
       "Why I built create-bawo-frontend and what it means for developer experience.",
-    readingTime: "5 min read",
+    readingTime: "3 min read",
     component: Blog4,
   },
-  // {
-  //   title: "Making Your Own npm Package",
-  //   date: "2025-08-26",
-  //   slug: "making-your-own-npm-package",
-  //   description:
-  //     "A practical breakdown of how to create, publish, and maintain your own npm package.",
-  //   readingTime: "6 min read",
-  //   component: Blog5,
-  // },
+{
+  title: "Supabase vs Firebase: Choosing the Right Backend for Modern Apps",
+  date: "2026-02-27",
+  slug: "supabase-vs-firebase-backend-architecture",
+  description:
+    "A practical breakdown of Supabase vs Firebase, RLS policies, authentication, storage costs, Cloudinary integration, and why backend fundamentals still matter.",
+  readingTime: "5 min read",
+  component: BlogSupabase,
+},
 ];
 
 /**
