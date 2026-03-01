@@ -31,6 +31,12 @@ export default function ResumePDF() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-10 flex flex-col items-center">
+
+      {/* --- REACT 19 SEO HOISTING --- */}
+      <title>{personal.name} | Professional Resume & Portfolio</title>
+      <meta name="description" content={`Download the professional resume of ${personal.name}, a Medical Student and Frontend Developer at the University of Port Harcourt.`} />
+      <meta name="robots" content="index, follow" />
+      {/* ------------------------------ */}
       
       {/* Download Button */}
       <button
