@@ -1,5 +1,6 @@
 import Blog4 from "./blog-4";
 import BlogSupabase from "./supabase";
+import BlogDomain from './domain'
 
 /**
  * Blog Post Registry
@@ -25,6 +26,15 @@ const posts = [
   readingTime: "5 min read",
   component: BlogSupabase,
 },
+{
+  title: "Choosing the Right Domain: .tech, .dev, .io & the Hidden Stress Behind It",
+  date: "2026-03-01",
+  slug: "choosing-the-right-developer-domain",
+  description:
+    "A practical breakdown of developer-focused domains like .tech, .dev, .io, .app, .ai and more — including pricing traps, renewal stress, branding decisions, and what to consider before committing long-term.",
+  readingTime: "4 min read",
+  component: BlogDomain,
+}
 ];
 
 /**

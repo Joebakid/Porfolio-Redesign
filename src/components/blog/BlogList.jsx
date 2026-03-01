@@ -5,7 +5,7 @@ export default function BlogList() {
   return (
     <section className="container-main mt-12 max-w-3xl space-y-10">
       <header className="space-y-2">
-        <h1 className="text-xl md:text-3xl font-extrabold uppercase tracking-wide">
+        <h1 className="text-xl md:text-3xl font-extrabold uppercase tracking-wide my-10">
           Blog
         </h1>
         <p className="text-sm md:text-base opacity-70">
