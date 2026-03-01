@@ -1,56 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- BASIC -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-  <meta name="theme-color" content="#000000" />
+  <head>
+    <meta charset="utf-8" />
 
-  <title>Joseph Bawo</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" />
 
-  <meta
-    name="description"
-    content="Joseph Bawo – Full Stack Developer building crypto tools, NFT utilities, staking platforms, and blockchain products."
-  />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7C1D9" />
 
-  <!-- FAVICONS -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- SEO -->
+    <title>
+     Joseph Bawo | FullStack Dev
+    </title>
 
-  <!-- MANIFEST -->
-  <link rel="manifest" href="/site.webmanifest" />
+ <meta
+  name="keywords"
+  content="Joseph Bawo, Full Stack Developer, Web Developer, Frontend Developer, Backend Developer, React Developer, JavaScript Developer, Node.js Developer, Software Engineer, UI Developer, Web Applications, Portfolio, Tech Developer Nigeria"
+/>
+    <!-- <meta
+      name="keywords"
+      content="LiveOutLoud, wellness store, Forever Living Nigeria, women fashion, girly clothing, shirts for women, skincare Nigeria, healthy lifestyle, beauty store online"
+    /> -->
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Joseph Bawo" />
-  <meta
-    property="og:description"
-    content="Joseph Bawo – Full Stack Developer building crypto tools, NFT utilities, staking platforms, and blockchain products."
-  />
-  <meta property="og:url" content="https://josephbawo.tech/" />
-  <meta property="og:image" content="https://josephbawo.tech/logo.png" />
-  <meta property="og:image:width" content="1024" />
-  <meta property="og:image:height" content="1024" />
+<meta
+  name="keywords"
+  content="Joseph Bawo, Full Stack Developer, Web Developer, Frontend Developer, Backend Developer, React Developer, JavaScript Developer, Node.js Developer, Software Engineer, UI Developer, Web Applications, Portfolio, Tech Developer Nigeria"
+/>
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Joseph Bawo" />
-  <meta
-    name="twitter:description"
-    content="Joseph Bawo – Full Stack Developer building crypto tools and blockchain products."
-  />
-  <meta name="twitter:image" content="https://josephbawo.tech/logo.png" />
+    <meta name="author" content="Joseph" />
 
-</head>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Canonical -->
+    <link rel="canonical" href="porfolio-redesign.vercel.app" />
+
+    <!-- Open Graph (WhatsApp / Facebook Preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LiveOutLoud" />
+    <meta
+      property="og:title"
+      content=" Joseph Bawo | FullStack Dev"
+    />
+   <meta
+  property="og:description"
+  content="Joseph Bawo is a Full Stack Developer building modern web applications with clean design, scalable backend systems, and seamless user experiences."
+/>
+    <meta property="og:url" content="porfolio-redesign.vercel.app" />
+
+    <!-- ✅ Correct image path -->
+    <meta
+      property="og:image"
+      content="porfolio-redesign.vercel.app/logo512x512.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="porfolio-redesign.vercel.app/logo512x512.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta
+      property="og:image:alt"
+      content="LiveOutLoud beauty and wellness logo"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="LiveOutLoud | Glow. Heal. Feel Beautiful"
+    />
+ <meta
+  name="twitter:description"
+  content="Joseph Bawo is a Full Stack Developer building modern, scalable web applications with clean design and robust backend systems."
+/>
+    <meta
+      name="twitter:image"
+      content="porfolio-redesign.vercel.app/logo512x512.png"
+    />
+    
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- Vite Entry -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal =
+          host === "localhost" ||
+          host === "127.0.0.1" ||
+          host === "[::1]";
+
+        if (isLocal) return;
+
+        window.va =
+          window.va ||
+          function () {
+            (window.vaq = window.vaq || []).push(arguments);
+          };
+
+        var s = document.createElement("script");
+        s.defer = true;
+        s.src = "/_vercel/insights/script.js";
+        document.head.appendChild(s);
+      })();
+    </script>
+  </body>
 </html>
