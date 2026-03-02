@@ -33,7 +33,6 @@ export default function Blog4() {
       <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto">
 {`npx create-bawo-frontend my-app
 cd my-app
-npm install
 npm run dev`}
       </pre>
     <p className="text-gray-700 leading-8">
