@@ -1,6 +1,7 @@
 import Blog4 from "./blog-4";
 import BlogSupabase from "./supabase";
 import BlogDomain from './domain'
+import BlogLinux from './BlogLinux'
 
 /**
  * Blog Post Registry
@@ -34,6 +35,15 @@ const posts = [
     "A practical breakdown of developer-focused domains like .tech, .dev, .io, .app, .ai and more — including pricing traps, renewal stress, branding decisions, and what to consider before committing long-term.",
   readingTime: "4 min read",
   component: BlogDomain,
+},
+{
+  title: "How to Use Linux: A Practical Guide for Developers",
+  date: "2026-03-07",
+  slug: "how-to-use-linux-for-developers",
+  description:
+    "A beginner-friendly guide to using Linux for development — including how to install distributions like Linux Mint, Debian, Kali Linux, and Arch Linux, why most apps are free, how updates work, essential commands, advanced terminal tools, and tips every developer should know.",
+  readingTime: "5 min read",
+  component: BlogLinux,
 }
 ];
 
