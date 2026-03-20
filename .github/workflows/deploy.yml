@@ -22,16 +22,46 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload to Pinata
+      - name: Install Pinata CLI
+        run: npm install -g pinata-cli
+
+      - name: Upload dist to Pinata
         run: |
-          CID=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
-            -H "pinata_api_key: ${{ secrets.PINATA_API_KEY }}" \
-            -H "pinata_secret_api_key: ${{ secrets.PINATA_SECRET_KEY }}" \
-            -F "file=@./dist" \
-            --form 'pinataMetadata={"name":"portfolio"}' \
-            | python3 -c "import sys,json; print(json.load(sys.stdin)['IpfsHash'])")
+          CID=$(node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const FormData = require('form-data');
+          const fetch = (...args) => import('node-fetch').then(({default: f}) => f(...args));
+
+          async function upload() {
+            const { globby } = await import('globby');
+            const files = await globby('./dist/**/*', { onlyFiles: true });
+            const form = new FormData();
+            for (const file of files) {
+              form.append('file', fs.createReadStream(file), {
+                filepath: 'dist/' + path.relative('./dist', file)
+              });
+            }
+            form.append('pinataMetadata', JSON.stringify({ name: 'joebakid-portfolio' }));
+            const res = await fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', {
+              method: 'POST',
+              headers: {
+                'pinata_api_key': process.env.PINATA_API_KEY,
+                'pinata_secret_api_key': process.env.PINATA_SECRET_KEY,
+                ...form.getHeaders()
+              },
+              body: form
+            });
+            const data = await res.json();
+            console.log(data.IpfsHash);
+          }
+          upload();
+          ")
           echo "CID=$CID" >> $GITHUB_ENV
-          echo "✅ Uploaded! CID = $CID"
+          echo "✅ Your CID is: $CID"
+        env:
+          PINATA_API_KEY: ${{ secrets.PINATA_API_KEY }}
+          PINATA_SECRET_KEY: ${{ secrets.PINATA_SECRET_KEY }}
 
       - name: Print CID
         run: echo "Your site CID is $CID"
