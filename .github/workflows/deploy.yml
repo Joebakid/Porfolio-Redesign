@@ -22,14 +22,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Pin to Pinata
-        id: pinata
-        uses: aquiladev/ipfs-action@master
-        with:
-          path: ./dist
-          service: pinata
-          pinataKey: ${{ secrets.PINATA_API_KEY }}
-          pinataSecret: ${{ secrets.PINATA_SECRET_KEY }}
+      - name: Upload to Pinata
+        run: |
+          CID=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+            -H "pinata_api_key: ${{ secrets.PINATA_API_KEY }}" \
+            -H "pinata_secret_api_key: ${{ secrets.PINATA_SECRET_KEY }}" \
+            -F "file=@./dist" \
+            --form 'pinataMetadata={"name":"portfolio"}' \
+            | python3 -c "import sys,json; print(json.load(sys.stdin)['IpfsHash'])")
+          echo "CID=$CID" >> $GITHUB_ENV
+          echo "✅ Uploaded! CID = $CID"
 
       - name: Print CID
-        run: echo "Your new CID is ${{ steps.pinata.outputs.hash }}"
+        run: echo "Your site CID is $CID"
