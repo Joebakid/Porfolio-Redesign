@@ -100,6 +100,7 @@ const BASIC_COMMANDS = [
   { cmd: "sha256sum", desc: "Compute and check SHA-256 message digest" },
   { cmd: "gzip", desc: "Compress or expand files" },
   { cmd: "gunzip", desc: "Decompress gzip files" },
+    { cmd: "tree", desc: "To see structure of file" },
   { cmd: "zip", desc: "Package and compress files" },
   { cmd: "unzip", desc: "List, test, or extract compressed files in a ZIP archive" }
 ];
