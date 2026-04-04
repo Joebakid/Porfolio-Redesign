@@ -129,23 +129,22 @@ const resumeData = {
       technologies:
         "Node.js, JavaScript, TypeScript, Inquirer, Vite, GitHub Actions",
     },
-
-    {
-      company: "ChronoliteNG",
-      role: "Founder & Product Engineer",
-      location: "Nigeria",
-      period: "2025 – Present",
-      description: "Watch E-Commerce Platform",
-      bullets: [
-        "Built a full e-commerce frontend for a watch retail brand using React and Tailwind, supporting dynamic product catalogs driven by JSON feeds.",
-        "Implemented WhatsApp ordering automation, dynamic pricing logic, discount campaigns, promotional rules, and cart state management.",
-        "Integrated vendor feeds, image optimization pipelines, and lazy-loading strategies to improve load performance on low-bandwidth devices.",
-        "Designed admin-friendly product update workflows without requiring backend engineers.",
-        "Optimized UX conversion funnels for mobile users and Nigerian payment behaviors.",
-      ],
-      technologies:
-        "React, Tailwind CSS, JavaScript, ImageKit, WhatsApp API",
-    },
+{
+  company: "ChronoliteNG",
+  role: "Founder & Full-Stack Engineer",
+  location: "Nigeria",
+  period: "2025 – Present",
+  description: "Watch E-Commerce Platform",
+  bullets: [
+    "Built a full-stack e-commerce storefront for a watch retail brand using Next.js 14, Tailwind CSS, and Firebase (Firestore + Auth) — handling product catalog, cart state, user accounts, and an admin dashboard.",
+    "Engineered a complete checkout pipeline integrating Paystack for payment processing, with server-side verification, order persistence to Firestore, and automated confirmation emails via Resend.",
+    "Built a real-time admin dashboard with sales analytics, monthly revenue breakdowns, profit/loss tracking, order management, walk-in sales recording, and delivery fulfillment views.",
+    "Implemented a promo/discount engine with expiry dates, minimum spend rules, first-order-only restrictions, and cart-level discount calculation.",
+    "Designed product variant selection that persists the chosen watch image through cart state into Firestore order records, ensuring admins see the exact variant each customer ordered.",
+  ],
+  technologies:
+    "Next.js 14, React, Tailwind CSS, Firebase (Firestore, Auth), Paystack, Resend, Vercel",
+},
 
     {
       company: "TechJojo",
