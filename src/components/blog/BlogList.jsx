@@ -7,7 +7,7 @@ export default function BlogList() {
       {/* --- SEO METADATA (React 19 Native Hoisting) --- */}
       <title>Blog | Joseph Bawo - Frontend Development & Product Building</title>
       <meta name="description" content="Read articles on frontend development, DX, and building real-world products like Favonartistry and BetaGrid." />
-      <meta property="og:title" content="Favour Nwajei Blog" />
+      <meta property="og:title" content="Joseph Bawo Blog" />
       <meta property="og:type" content="website" />
       {/* --------------------------------------------- */}
 

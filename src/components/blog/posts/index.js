@@ -2,6 +2,7 @@ import Blog4 from "./blog-4";
 import BlogSupabase from "./supabase";
 import BlogDomain from './domain'
 import BlogLinux from './BlogLinux'
+import BlogENS from './BlogENS'
 
 /**
  * Blog Post Registry
@@ -44,7 +45,16 @@ const posts = [
     "A beginner-friendly guide to using Linux for development — including how to install distributions like Linux Mint, Debian, Kali Linux, and Arch Linux, why most apps are free, how updates work, essential commands, advanced terminal tools, and tips every developer should know.",
   readingTime: "5 min read",
   component: BlogLinux,
-}
+},
+{
+  title: "How to Use Your ENS Name as a Website Domain",
+  date: "2026-05-04",
+  slug: "ens-name-as-domain",
+  description:
+    "How to point your .eth name to an IPFS site, access it via yourname.eth.limo, why Brave resolves .eth natively, and why Chrome can't.",
+  readingTime: "4 min read",
+  component: BlogENS,
+},
 ];
 
 /**
